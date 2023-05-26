@@ -1,0 +1,37 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base {
+  html, body { @apply h-full; }
+  html { @apply text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl scroll-smooth}
+  body { @apply bg-white text-black font-light antialiased selection:bg-secondary selection:text-white grid}
+  
+  /* Headings */
+  h1, h2 {
+    @apply mb-12 font-heading font-semibold;
+
+    font-size: 3em;
+    line-height: 1.1em;
+  }
+  h1 strong, h2 strong {
+    @apply font-bold;
+  }
+  h2:not(:first-child) { @apply mt-6 }
+  h3 { @apply font-semibold font-heading}
+  h3:not(:first-child) { @apply mt-6 }
+  
+  /* Other typography */
+  p { @apply mb-3 font-light}
+  p strong { @apply font-bold}
+
+  .btn-gold {
+    @apply 
+    text-center inline-flex items-center justify-center px-5 py-2.5 rounded-sm
+    text-white bg-secondary uppercase
+    hover:ring-white hover:ring-2
+    focus:ring-white focus:ring-2 focus:outline-none 
+    
+  }
+}
