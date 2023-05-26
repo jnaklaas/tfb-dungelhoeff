@@ -15,8 +15,8 @@
   import logoSrc from '$lib/images/dungelhoeff-logo.svg';
 
   const menuItems = [
-    // { href: '/', title: 'Home'},
-    // { href: '/contact', title: 'Contact'}
+    { href: '/', title: 'Home'},
+    { href: '/#contact', title: 'Contact'}
   ];
   
   /** @type {import('./$types').PageData} */
