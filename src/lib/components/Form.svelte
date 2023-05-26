@@ -5,8 +5,8 @@
 
   const colorVariants = {
     primary: {
-      label: "!text-black !bg-primary",
-      input: "!text-black !border-black focus:!border-white focus:!text-white placeholder:text-black"
+      label: "!text-white !bg-primary",
+      input: "!text-white !border-white focus:!border-black focus:!text-black placeholder:text-white"
     },
     white: {
       label: "!text-black !bg-white",

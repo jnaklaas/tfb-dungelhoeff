@@ -6,11 +6,11 @@
 @layer base {
   html, body { @apply h-full; }
   html { @apply text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl scroll-smooth}
-  body { @apply bg-white text-black font-light antialiased selection:bg-secondary selection:text-white grid}
+  body { @apply bg-white text-coolgray font-light antialiased selection:bg-secondary selection:text-white grid}
   
   /* Headings */
   h1, h2 {
-    @apply mb-6 font-heading font-semibold;
+    @apply mb-6 font-heading font-normal text-black;
 
     font-size: 2.6666666667em;
     line-height: 1.1em;
@@ -19,7 +19,7 @@
     @apply font-bold;
   }
   h2:not(:first-child) { @apply mt-6 }
-  h3 { @apply font-semibold font-heading text-primary mb-3;
+  h3 { @apply font-semibold font-heading text-primary mb-2 text-black;
     font-size: 1.333333333333em;
     line-height: 1.1em;
   }

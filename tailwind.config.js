@@ -12,7 +12,7 @@ export default {
 				coolgray: '#646569',
 				secondary: '#597533',
 				tertiary: '#d49d6f',
-				quaternary: 'c7c7c7'
+				quaternary: '#c7c7c7'
 			}
 		},
 		fontFamily: {

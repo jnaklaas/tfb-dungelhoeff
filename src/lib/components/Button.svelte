@@ -9,4 +9,4 @@
   }
 </script>
 
-<Button {href} on:click type={$$props.type ?? 'button'} class="{$$props.class} {colorVariants[color]}  ring-2 !py-1.5 !text-sm uppercase rounded-sm mt-3"><slot /></Button>
+<Button {href} on:click type={$$props.type ?? 'button'} class="{$$props.class} {colorVariants[color]}  ring-2 !py-1.5 !text-sm !font-bold rounded-sm mt-3"><slot /></Button>

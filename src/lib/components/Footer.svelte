@@ -2,7 +2,7 @@
   import logoTFB from '$lib/images/another-tfb-brand.svg';
 </script>
 
-<footer class="bg-black text-white self-end text-sm lg:text-xs">
+<footer class="bg-coolgray text-white self-end text-sm lg:text-xs">
   <div class="mx-4 md:mx-24">
     <div class="my-4 md:my-4 lg:container grid grid-cols-4">
       <div class="col-span-6">

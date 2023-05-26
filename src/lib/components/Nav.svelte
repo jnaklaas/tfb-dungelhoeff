@@ -36,7 +36,7 @@
     <img
       src="{logoSrc}"
       alt="{baseline}"
-      class="h-10 md:h-12 lg:h-13 xl:h-14 2xl:16" 
+      class="h-10 md:h-12 xl:h-14 2xl:h-16" 
     >
   </NavBrand>
     

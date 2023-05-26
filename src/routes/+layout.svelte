@@ -13,6 +13,7 @@
 	// import NotificationModal from '$lib/components/NotificationModal.svelte';
 
   import logoSrc from '$lib/images/dungelhoeff-logo.svg';
+  import logoDevSrc from '$lib/images/c-living-logo.svg';
 
   const menuItems = [
     // { href: '/', title: 'Home'},
@@ -45,6 +46,6 @@
     Projectadres: Mechelsesteenweg 28, Lier
   </svelte:fragment>
   <svelte:fragment slot="developer">
-    Een project van Matexi en Cordeel
+    Een project van <img src={logoDevSrc} alt="C-Living" class="h-4 inline mb-1"/>
   </svelte:fragment>
 </Footer>
