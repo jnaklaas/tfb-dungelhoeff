@@ -42,9 +42,9 @@
 
 <Footer>
   <svelte:fragment slot="address">
-    Projectadres: Philippe Saveryslaan 72, 9140 Temse
+    Projectadres: Mechelsesteenweg 28, Lier
   </svelte:fragment>
   <svelte:fragment slot="developer">
-    Een project van Nieuw Temse
+    Een project van Matexi en Cordeel
   </svelte:fragment>
 </Footer>

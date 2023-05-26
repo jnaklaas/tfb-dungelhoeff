@@ -21,31 +21,31 @@
 
 <article>
 <Hero {HeroImg}>
-  <h1><strong>Scaldia</strong>, fijn wonen aan het water op De Zaat</h1>
-  <p>Dat De Zaat in Temse <strong>dé top woonlocatie</strong> in de regio is, 
-    hoeven we jou alvast niet meer te vertellen. Vele gezinnen maakten 
-    van De Zaat inmiddels hun favoriete <strong>thuishaven langs de Schelde</strong>.</p>
+  <h1><strong>Villa Vigo</strong>, voluit woonplezier in hartje Lier</h1>
 </Hero>
 
 <Content>
-  <svelte:fragment slot="title"><strong>Scaldia,</strong> modern wooncomfort op een <strong>unieke plek</strong></svelte:fragment>
-  <p>Scaldia is het nieuwe, stijlvolle en duurzame woonproject op De Zaat, aan de oevers 
-    van de Schelde. Kwaliteitsvol en energiezuinig, met een eigentijdse uitstraling en 
-    <strong>veel modern wooncomfort op deze unieke plek</strong>. 
-  </p>
-
-  <p>Woonplezier ten top dus, want zo’n prachtige thuishaven wil jij natuurlijk ook. 
-    En vergeet niet: dit is <strong>jouw laatste kans</strong> om te wonen aan het water 
-    met zicht op de Schelde!
+  <svelte:fragment slot="title"><strong>Villa Vigo,</strong> viva het fijne leven</svelte:fragment>
+  <p>
+    Wil jij eigentijds, comfortabel en duurzaam wonen? Én ook nog eens op een superligging
+    in hartje Lier? Dan mag je bij Villa Vigo héél veel vakjes aanvinken. 
+    Met een appartement in Villa Vigo heb je <strong>alles om voluit van het leven te genieten</strong>. 
   </p>
 </Content>
 
 <Content>
-  <svelte:fragment slot="title">Benieuwd hoe ook jij kunt aanmeren bij <strong>Scaldia?</strong></svelte:fragment>
+  <svelte:fragment slot="title">Villa Vigo heeft héél veel in petto</svelte:fragment>
   <p>
-    Laat hier je gegevens achter en we nemen met jou als eerste contact op wanneer de verkoop wordt opgestart.
+    Villa Vigo is een <strong>nieuw, stijlvol en slim ontworpen woonproject in Lier, </strong>
+    midden een zeer fijne buurt op de Dungelhoeff-site vlak bij het centrum. 
+    Ontdek snel wat Villa Vigo als jouw thuisbasis allemaal voor jou in petto heeft. 
+    Want zo zal je al voorjaar 2024 aangenaam verrast zijn door je 
+    <strong>kwaliteitsvol en energiezuinig</strong> appartement met 
+    een moderne <strong>uitstraling</strong> en veel lichtinval 
+    op een <strong>uitstekende plek</strong>. 
   </p>
 </Content>
+
  
 
  
