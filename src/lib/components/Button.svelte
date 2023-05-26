@@ -2,12 +2,11 @@
   import { Button } from 'flowbite-svelte';
 
   export let href;
-  export let color = "gold";
+  export let color = "white";
 
   const colorVariants = {
-    gold: 'text-white bg-gold hover:bg-gold',
-    teal: 'text-white bg-teal hover:bg-teal',
+    white: 'text-white bg-transparent bg-opacity-10 ring-white hover:text-black hover:bg-white hover:bg-opacity-20',
   }
 </script>
 
-<Button {href} on:click type={$$props.type ?? 'button'} class="{$$props.class} {colorVariants[color]} !py-1.5 !text-sm uppercase hover:ring-white hover:ring-2 rounded-sm"><slot /></Button>
+<Button {href} on:click type={$$props.type ?? 'button'} class="{$$props.class} {colorVariants[color]}  ring-2 !py-1.5 !text-sm uppercase rounded-sm mt-3"><slot /></Button>

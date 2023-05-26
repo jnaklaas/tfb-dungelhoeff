@@ -10,16 +10,19 @@
   
   /* Headings */
   h1, h2 {
-    @apply mb-12 font-heading font-semibold;
+    @apply mb-6 font-heading font-semibold;
 
-    font-size: 3em;
+    font-size: 2.6666666667em;
     line-height: 1.1em;
   }
-  h1 strong, h2 strong {
+  h1 strong, h2 strong, h3 strong {
     @apply font-bold;
   }
   h2:not(:first-child) { @apply mt-6 }
-  h3 { @apply font-semibold font-heading}
+  h3 { @apply font-semibold font-heading text-primary mb-3;
+    font-size: 1.333333333333em;
+    line-height: 1.1em;
+  }
   h3:not(:first-child) { @apply mt-6 }
   
   /* Other typography */

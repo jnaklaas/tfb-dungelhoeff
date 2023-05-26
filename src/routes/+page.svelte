@@ -1,13 +1,14 @@
 <script>
 	import Hero from "../lib/components/Hero.svelte";
   import Content from "$lib/components/Content.svelte";
-	// import Form from "$lib/components/Form.svelte";
-	// import Contact from "$lib/components/Contact.svelte";
+	import Form from "$lib/components/Form.svelte";
+	import Contact from "$lib/components/Contact.svelte";
+	import Cta from "$lib/components/Cta.svelte";
 
   import HeroImg from '../lib/images/hero.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
 
   /** @type {import('./$types').ActionData} */
-  // export let form;
+  export let form;
 
   const fields = [
     {id: 'firstname', label: 'Voornaam*'},
@@ -46,56 +47,22 @@
   </p>
 </Content>
 
- 
-
- 
-
-
-
-<!-- <Hero cta={{link:'#contact', text:'Registreer je nu'}}>
-  <svelte:fragment slot=title>Hét <strong>woonicoon</strong> aan de kust</svelte:fragment>
-  <svelte:fragment slot=text><p>Philippa is een <strong>nieuw, elegant en doordacht</strong> woonproject in 
-    Knokke-Heist, vlakbij strand en zee. Kwaliteitsvol en duurzaam, met een 
-    moderne uitstraling en extra veel wooncomfort op een unieke plek. Zó wil 
-    ook jij vast en zeker wonen én genieten van het leven!</p>
-    <h3>Benieuwd naar de plannetjes die Philippa daarvoor in petto heeft?</h3>
-    <p>Registreer je en krijg als allereerste de laatste nieuwtjes over al haar
-     avonturen.</p>
-  </svelte:fragment>
-</Hero> -->
-<!-- 
-<div class="sm:mx-4 md:mx-24">
-  <div class="my-4 md:my-20 lg:container">
-    <div id="contact" class="bg-coolgray text-darkteal p-4 md:p-8 lg:px-20 lg:py-10">
-      <h2 class="text-gold">Contact</h2>
-      {#if form?.success} <p class="text-lime-600 font-semibold">{form.success}</p>{/if}
-      <Form action="/#contact" {fields}></Form>
-    </div>
-  </div>
-</div>
-
 <Contact>
   <!-- <svelte:fragment slot=title>Contacteer ons</svelte:fragment>
-  <svelte:fragment slot=text></svelte:fragment> ->
+  <svelte:fragment slot=text></svelte:fragment> -->
   <svelte:fragment slot=contactDetails>
     <h2 class="font-semibold">Contacteer ons</h2>
-    <p>Wil u meer weten over Philippa? Heeft u specifieke vragen? Maak een afspraak via het contactformulier of neem contact op met onze woonadviseur.</p>
+    <p>Wil u meer weten over Villa Vigo? Heeft u specifieke vragen? Maak een afspraak via het contactformulier of neem contact op met onze woonadviseur.</p>
     <h3>Projectadres</h3>
     <p>      
-      Duinenstraat 9-13, Knokke-Heist
-    </p>
-    <h3>Dream Estate by Colpin</h3>
-    <p>
-      <!-- <Img src="{DreamestateLogo}" class="max-h-16 w-auto float-right"/> ->
-      Aygline Heene<br>
-      +32 (0)50 71 11 20<br>
-      +32 (0)478 43 34 78
+      Mechelsesteenweg 28, Lier
     </p>
   </svelte:fragment>
   <svelte:fragment slot=form>
-    <h2 class="text-gold font-semibold">Contactformulier</h2>
-      {#if form?.success} <p class="text-lime-600 font-semibold">{form.success}</p>{/if}
-      <Form action="/contact" {fields}></Form>
+    <h2 class="font-semibold text-2xlem">Contactformulier</h2>
+      {#if form?.success} <p class="text-green-600 font-semibold">{form.success}</p>{/if}
+      <Form action="/" {fields}></Form>
   </svelte:fragment>
-</Contact>-->
+</Contact>
+
 </article>
