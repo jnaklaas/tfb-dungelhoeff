@@ -7,7 +7,7 @@
   import HeroImg from '../lib/images/hero.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
 
   /** @type {import('./$types').ActionData} */
-  export let form;
+  // export let form;
 
   const fields = [
     {id: 'firstname', label: 'Voornaam*'},
