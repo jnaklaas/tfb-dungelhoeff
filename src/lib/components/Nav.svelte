@@ -6,7 +6,6 @@
   export let logoSrc = null;
   export let baseline = '';
   export let menuItems = [];
-
   $: route = $page.route.id;
 </script>
 
@@ -27,16 +26,15 @@
   <Nav {logoSrc} baseline="This project has the awesomest baseline" {menuItems} />
   ```
 -->
-
 {#if logoSrc}
 <Navbar let:hidden let:toggle fluid=true
-  class="!bg-transparent dark:text-white px-4 md:px-8 lg:px-10 xl:px-12 2xl:px-24 py-6 xl:py-8 2xl:py-12"
+  class="!bg-transparent dark:text-white !px-0 py-base"
 >
   <NavBrand href="/">
     <img
       src="{logoSrc}"
       alt="{baseline}"
-      class="h-10 md:h-12 xl:h-14 2xl:h-16" 
+      class="nav-brand"
     >
   </NavBrand>
     
@@ -50,10 +48,9 @@
     nonActiveClass=" dark:hover:!bg-darkteal"
   >
     {#each menuItems as item}
-      <NavLi href="{item.href}" active={route === item.href}>{item.title}</NavLi>
+      <NavLi href="{item.href}" active={route === item.href} on:click={toggle}>{item.title}</NavLi>
     {/each}
   </NavUl>
   {/if}
-  
 </Navbar>
 {/if}

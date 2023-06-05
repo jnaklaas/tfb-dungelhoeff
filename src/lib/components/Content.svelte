@@ -11,13 +11,12 @@
   export let imageThumb = null;
   export let imageClass = '';
   export let lightbox = false;
-  export let hero = false;
   export let imageCaption = null;
 
   $: largeImg = (image && image.length > 0) ? image.pop() : '';
 </script>
 
-<section class="{ hero ? 'md:mt-8 lg:mt-12 xl:mt-16' : ''} content mb-12 md:mb-12 xl:mb-24" id="{$$props.id || null}">
+<section class="{$$props.class ?? ''} content mb-12 md:mb-12 xl:mb-24" id="{$$props.id || null}">
   <Container grid>
 
     {#if image}
@@ -57,15 +56,15 @@
       {imageLeft ? 'col-end-13 xl:col-start-7' : 'col-start-1 xl:col-start-2' }
       {boxedText ? `bg-${boxColor} p-4 md:p-8 xl:p-12 row-start-2 md:-mt-24 xl:-mt-36` : 'row-start-1 md:mt-24 xl:col-span-5' }
     ">
-      {#if $$slots.title}<h2 class="text-secondary"><slot name="title">Default title</slot></h2>{/if}
+      {#if $$slots.title}<h2 class="text-primary"><slot name="title">Default title</slot></h2>{/if}
       <slot><p>Default text</p></slot>
       {#if $$slots.cta}<div class="mt-8"><slot name="cta"/></div>{/if}
     </div>
 
 
     {:else}
-    <div class="{textContentClass} col-span-10 md:col-start-2">
-      {#if $$slots.title}<h2 class="text-secondary"><slot name="title">Default title</slot></h2>{/if}
+    <div class="{textContentClass} col-span-10 col-start-2 2xl:col-span-8 2xl:col-start-3">
+      {#if $$slots.title}<h2 class="text-primary"><slot name="title">Default title</slot></h2>{/if}
       <slot><p>Default text</p></slot>
       {#if $$slots.cta}<div class="mt-8"><slot name="cta"/></div>{/if}
     </div>

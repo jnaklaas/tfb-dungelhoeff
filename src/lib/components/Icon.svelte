@@ -25,7 +25,7 @@
 </script>
 
 <svg
-  class="{$$props.class} fill-current inline relative bottom-0.5"
+  class="{$$props.class || ''} fill-current inline relative bottom-0.5"
   {focusable}
   width={(sizeAmount * icons[name].boxW / icons[name].boxH) + sizeUnit ?? size}
   height={size}

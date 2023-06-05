@@ -6,11 +6,11 @@
   const colorVariants = {
     primary: {
       label: "!text-white !bg-primary",
-      input: "!text-white !border-white focus:!border-black focus:!text-black placeholder:text-white"
+      input: "!text-white !border-white focus:!border-coolgray focus:!text-coolgray placeholder:text-white"
     },
     white: {
       label: "!text-black !bg-white",
-      input: "!text-black !border-black focus:!border-white focus:!text-white placeholder:text-black"
+      input: "!text-black !border-black focus:!border-white focus:!text-white placeholder:text-white"
     }
   }
 </script>
@@ -34,10 +34,10 @@
   {/each}
 
 
-  <Label for="message" class="{colorVariants[color].label} mb-2">Uw bericht</Label>
+  <!-- <Label for="message" class="{colorVariants[color].label} mb-2">Uw bericht</Label> -->
   {#if !noMessage}
   <Textarea id="message" name="message" placeholder="Uw bericht" rows="4" class="{colorVariants[color].input} bg-transparent rounded-sm border-1 border-darkteal focus:border-gold focus:!ring-0"/>  
   {/if}
-  <Checkbox class="mt-4" required><span>Ik ga akkoord met de <a href="privacyverklaring" target="_blank" class="text-gold font-bold underline">privacyverklaring</a>*.</span></Checkbox>
+  <Checkbox class="mt-4 text-white" required><span>Ik ga akkoord met de <a href="privacyverklaring" target="_blank" class="text-gold font-bold underline">privacyverklaring</a>*.</span></Checkbox>
   <Button class="mt-8" type="submit">{submitText ?? 'Contacteer ons'}</Button>
 </form>

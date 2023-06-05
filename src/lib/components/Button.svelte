@@ -5,8 +5,8 @@
   export let color = "white";
 
   const colorVariants = {
-    white: 'text-white bg-transparent bg-opacity-10 ring-white hover:text-black hover:bg-white hover:bg-opacity-20',
+    white: 'text-white bg-transparent ring-white hover:text-coolgray hover:ring-coolgray hover:bg-transparent lowercase',
   }
 </script>
 
-<Button {href} on:click type={$$props.type ?? 'button'} class="{$$props.class} {colorVariants[color]}  ring-2 !py-1.5 !text-sm !font-bold rounded-sm mt-3"><slot /></Button>
+<Button {href} on:click type={$$props.type ?? 'button'} class="{$$props.class} {colorVariants[color]} ring-1 !py-1.5 !text-sm !font-semibold rounded-sm mt-3"><slot /></Button>

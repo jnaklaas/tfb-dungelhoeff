@@ -25,7 +25,7 @@
   <h1 class="mb-2"><strong>Villa Vigo</strong>, voluit woonplezier in hartje Lier</h1>
 </Hero>
 
-<Content>
+<Content class="!mb-6 xl:!mb-12">
   <svelte:fragment slot="title"><strong>Villa Vigo,</strong> viva het fijne leven</svelte:fragment>
   <p>
     Wil jij eigentijds, comfortabel en duurzaam wonen? Én ook nog eens op een superligging

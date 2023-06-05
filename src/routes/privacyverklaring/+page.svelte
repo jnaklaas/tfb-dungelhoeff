@@ -1,3 +1,8 @@
+<script>
+  import Container from "$lib/components/Container.svelte";
+</script>
+
+<Container>
 <h1>Privacyverklaring</h1>
 <p>Deze verklaring geldt voor Tricks for Bricks bvba, gevestigd aan de Korte Keppestraat 7/61 in 9320 Erembodegem en voor alle handelsnamen die gelieerd zijn aan of gebruikt worden door Tricks for Bricks bvba (Real Estate Classic Tour, Bricks to Invest, etc). Deze verklaring is bovendien niet alleen van toepassing op de website van Tricks for Bricks, maar eveneens op alle portaalsites die de onderneming beheert en algemeen op alle communicatie die Tricks for Bricks voert.</p>
 <p>Om u en uw bedrijf optimaal van dienst te kunnen zijn, is het noodzakelijk dat Tricks for Bricks uw contactgegevens kan gebruiken en alle relevante informatie over u kan bijhouden en gebruiken. Daarbij willen we uiteraard uw privacy maximaal respecteren. We wensen dan ook helemaal in regel te zijn met de Europese privacywetgeving, (GDPR - General Data Protection Regulation) of AVG (Algemene Verordening Gegevensbescherming).</p>
@@ -13,3 +18,4 @@
 <p>Ook als u ons toestemming hebt gegeven uw gegevens te gebruiken, kunt u te allen tijde deze toestemming weer intrekken. Als we u met uw goedkeuring een nieuwsbrief toesturen, zal er ook altijd een gemakkelijk te gebruiken functie worden voorzien om u uit te schrijven.</p>
 <p>Wij werken deze verklaring regelmatig bij zodat ze een correct beeld geeft van onze intenties en onze werkwijze, die steeds wordt aangepast aan de regelgeving. We suggereren dan ook dat u af en toe deze tekst herbekijkt als u onze website bezoekt of van onze online diensten gebruik maakt.</p>
 <p>Met alle vragen omtrent persoonsgegevens kan u terecht bij onze zaakvoerder, die als primaire taak heeft uw rechten te verzekeren. U kunt deze bereiken op het volgende mailadres: <a href="mailto:jo@tricksforbricks.be">jo@tricksforbricks.be</a>.</p>
+</Container>

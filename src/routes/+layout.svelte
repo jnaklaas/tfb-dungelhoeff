@@ -30,16 +30,15 @@
   inject({ mode: dev ? 'development' : 'production' });
 </script>
 
-<div>
-  <!-- <NotificationBanner/> -->
-  <!-- <NotificationModal repeatNthRequest=6/> -->
-  <header>
-    <Nav {logoSrc} {menuItems}/>
-  </header>
-  <main>
-    <slot/>
-  </main>
-</div>
+<!-- <NotificationBanner/> -->
+<!-- <NotificationModal repeatNthRequest=6/> -->
+<header class="container-fluid-wide">
+  <Nav {logoSrc} {menuItems}/>
+</header>
+
+<main>
+  <slot/>
+</main>
 
 <Footer>
   <svelte:fragment slot="address">
