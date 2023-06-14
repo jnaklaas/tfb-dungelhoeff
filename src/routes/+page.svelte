@@ -1,4 +1,8 @@
 <script>
+  import { Toast } from 'flowbite-svelte';
+  import { fly } from 'svelte/transition';
+  import { onMount } from 'svelte';
+
 	import Hero from "../lib/components/Hero.svelte";
   import Content from "$lib/components/Content.svelte";
 	import Form from "$lib/components/Form.svelte";
@@ -7,16 +11,31 @@
 
   import HeroImg from '../lib/images/hero.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
 
+
+  import Icon from '$lib/components/Icon.svelte';
+
   /** @type {import('./$types').ActionData} */
   export let form;
 
   const fields = [
     {id: 'firstname', label: 'Voornaam*'},
-    {id: 'name', label: 'Naam*'},
-    {id: 'email', type: 'email', label: 'E-mail*'},
-    {id: 'tel', type: 'tel', label: 'Telefoonnummer*'},
-    {id: 'city', label: 'Woonplaats*'},
+    // {id: 'name', label: 'Naam*'},
+    // {id: 'email', type: 'email', label: 'E-mail*'},
+    // {id: 'tel', type: 'tel', label: 'Telefoonnummer*'},
+    // {id: 'city', label: 'Woonplaats*'},
   ];
+  
+  let showFormResponseNotification = false;
+
+  onMount(async () => {
+    // Form response feedback + download
+    if(form && form.response) {
+      showFormResponseNotification = true;
+      setTimeout(() => {
+        showFormResponseNotification = false;
+      }, 8000);
+    }
+  });
 </script>
 
 
@@ -60,9 +79,24 @@
   </svelte:fragment> -->
   <svelte:fragment slot=form>
     <h2 class="font-semibold text-2xlem">Contactformulier</h2>
-      {#if form?.success} <p class="text-green-600 font-semibold">{form.success}</p>{/if}
-      <Form action="/" {fields}></Form>
+    {#if form && form.response.success} <p class="text-green-600 font-semibold">{form.response.message}</p>{/if}
+    <Form action="/" {fields}></Form>
   </svelte:fragment>
 </Contact>
 
 </article>
+
+{#if form && form.response }
+<div class="fixed right-0 bottom-0 m-4">
+  <Toast 
+    transition={fly} params="{{x: 200}}"
+    color="{form.response.success ? 'green': 'red'}"
+    divClass="mb-4 w-full max-w-xs z-20 p-4"
+    bind:open={showFormResponseNotification}>
+    <svelte:fragment slot="icon">
+      <Icon name={form.response.success ? 'circleCheck' : 'triangleExclamation'}/>
+    </svelte:fragment>
+    {form.response.message}
+  </Toast>
+</div>  
+{/if}
