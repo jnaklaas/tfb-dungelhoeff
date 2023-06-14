@@ -7,6 +7,8 @@
   export let baseline = '';
   export let menuItems = [];
   $: route = $page.route.id;
+  let viewportW;
+  const mobileNavBreakpoint = 768
 </script>
 
 <!--
@@ -26,6 +28,9 @@
   <Nav {logoSrc} baseline="This project has the awesomest baseline" {menuItems} />
   ```
 -->
+
+<svelte:window bind:innerWidth={viewportW}/>
+
 {#if logoSrc}
 <Navbar let:hidden let:toggle fluid=true
   class="!bg-transparent dark:text-white !px-0 py-base"
@@ -48,7 +53,7 @@
     nonActiveClass=" dark:hover:!bg-darkteal"
   >
     {#each menuItems as item}
-      <NavLi href="{item.href}" active={route === item.href} on:click={toggle}>{item.title}</NavLi>
+      <NavLi href="{item.href}" active={route === item.href} on:click={(viewportW < mobileNavBreakpoint) ? toggle : null}>{item.title}</NavLi>
     {/each}
   </NavUl>
   {/if}

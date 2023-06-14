@@ -5,7 +5,7 @@
 
   export let imageLeft = false;
   export let boxedText = false;
-  export let boxColor = "coolgray text-darkteal";
+  export let boxColor = "primary text-white";
   export let textContentClass = '';
   export let image;
   export let imageThumb = null;
@@ -56,7 +56,7 @@
       {imageLeft ? 'col-end-13 xl:col-start-7' : 'col-start-1 xl:col-start-2' }
       {boxedText ? `bg-${boxColor} p-4 md:p-8 xl:p-12 row-start-2 md:-mt-24 xl:-mt-36` : 'row-start-1 md:mt-24 xl:col-span-5' }
     ">
-      {#if $$slots.title}<h2 class="text-primary"><slot name="title">Default title</slot></h2>{/if}
+      {#if $$slots.title}<h2 class="{boxedText ?'' : 'text-primary'}"><slot name="title">Default title</slot></h2>{/if}
       <slot><p>Default text</p></slot>
       {#if $$slots.cta}<div class="mt-8"><slot name="cta"/></div>{/if}
     </div>

@@ -24,7 +24,7 @@
     {#if $$slots.contactDetails }
 
     <div class="z-10 row-start-1 self-start col-span-6 col-start-1 lg:pr-6
-      bg-secondary text-black p-6 md:p-8 xl:p-12 md:mt-24 xl:mt-36
+    color-scheme-dark p-6 md:p-8 xl:p-12 md:mt-24 xl:mt-36
     ">
       <slot name="contactDetails"><p>Contact details placeholder</p></slot>
     </div>

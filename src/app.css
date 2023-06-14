@@ -21,7 +21,7 @@
   
   /* Other typography */
   p { @apply mb-3 font-normal}
-  p strong { @apply font-semibold}
+  p strong, blockquote strong { @apply font-semibold}
 
   /* Layout */
   html, body { @apply h-full }
@@ -31,6 +31,7 @@
   /* Color schemes */
   .color-scheme-dark { @apply bg-coolgray text-white }
   .color-scheme-primary { @apply bg-primary text-white }
+  /* .color-scheme-light { @apply bg-transparent text-coolgray } */
 }
 
 @layer utilities {

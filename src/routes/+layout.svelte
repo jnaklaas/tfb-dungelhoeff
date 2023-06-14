@@ -16,8 +16,10 @@
   import logoDevSrc from '$lib/images/c-living-logo.svg';
 
   const menuItems = [
-    // { href: '/', title: 'Home'},
-    // { href: '/#contact', title: 'Contact'}
+    { href: '/', title: 'Home'},
+    { href: '/ligging', title: 'Ligging'},
+    { href: '/aanbod', title: 'Aanbod'},
+    { href: '/contact', title: 'Contact'}
   ];
   
   /** @type {import('./$types').PageData} */
