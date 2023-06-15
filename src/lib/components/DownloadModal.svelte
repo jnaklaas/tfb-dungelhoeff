@@ -19,7 +19,7 @@
 
 <Modal title="Download {filetype} {file ?? ''}" autoclose={false} bind:open="{toggleModal}">
   <slot name='message'>
-    <Form bind:fields="{fields}" action="/aanbod" submitText="Download" color="white" noMessage></Form>
+    <Form bind:fields="{fields}" action="/aanbod" submitText="Download" color="white" btnColor="primary" noMessage></Form>
   </slot>
   <svelte:fragment slot='footer'></svelte:fragment>
 </Modal>

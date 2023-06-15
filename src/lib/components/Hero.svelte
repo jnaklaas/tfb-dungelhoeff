@@ -1,6 +1,6 @@
 <script>
   import Img from '@zerodevx/svelte-img';
-	import { getContext } from 'svelte';
+	// import { getContext } from 'svelte';
 
   export let HeroImg = null;
 </script>
@@ -36,7 +36,7 @@
   </div>
 
   {#if $$slots.default || $$slots.notification}
-  <div class="lg:-mt-24 xl:-mt-36 sm:container-fluid">
+  <div class="lg:-mt-18 xl:-mt-24 sm:container-fluid">
 
     <!-- Hero content -->
     {#if $$slots.default}

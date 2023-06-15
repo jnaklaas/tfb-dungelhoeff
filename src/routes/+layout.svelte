@@ -8,8 +8,8 @@
   
   // import components
 	import Footer from '$lib/components/Footer.svelte';
-	import Nav from '../lib/components/Nav.svelte';
-	// import NotificationBanner from '$/lib/components/NotificationBanner.svelte';
+	import Nav from '$lib/components/Nav.svelte';
+	import NotificationBanner from '$lib/components/NotificationBanner.svelte';
 	// import NotificationModal from '$lib/components/NotificationModal.svelte';
 
   import logoSrc from '$lib/images/dungelhoeff-logo.svg';
@@ -32,7 +32,8 @@
   inject({ mode: dev ? 'development' : 'production' });
 </script>
 
-<!-- <NotificationBanner/> -->
+<NotificationBanner>Extra interessant: verlaagd btw-tarief van 6%</NotificationBanner>
+
 <!-- <NotificationModal repeatNthRequest=6/> -->
 <header class="container-fluid-wide">
   <Nav {logoSrc} {menuItems}/>

@@ -48,12 +48,12 @@
   
   <NavUl {hidden}
     id="navbar-ul"
-    ulClass="flex flex-col p-4 md:pr-0 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium dark:max-md:bg-teal dark:max-md:!text-white"
-    activeClass="dark:max-sm:text-darkteal dark:max-sm:bg-teal-04 dark:md:font-bold"
-    nonActiveClass=" dark:hover:!bg-darkteal"
+    ulClass="flex flex-col p-4 md:pr-0 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium text-coolgray max-md:bg-primary max-md:!text-white"
+    activeClass="font-bold"
+    nonActiveClass="hover:border-primary hover:max-sm:bg-secondary"
   >
     {#each menuItems as item}
-      <NavLi href="{item.href}" active={route === item.href} on:click={(viewportW < mobileNavBreakpoint) ? toggle : null}>{item.title}</NavLi>
+      <NavLi class="rounded-none md:border-b border-transparent" href="{item.href}" active={route === item.href} on:click={(viewportW < mobileNavBreakpoint) ? toggle : null}>{item.title}</NavLi>
     {/each}
   </NavUl>
   {/if}

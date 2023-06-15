@@ -1,7 +1,7 @@
 <script>
 	import Button from "./Button.svelte";
   import { FloatingLabelInput, Textarea, Label, Checkbox } from "flowbite-svelte";
-  export let action, fields = undefined, submitText, color = "primary", noMessage = false;
+  export let action, fields = undefined, submitText, color = "primary", btnColor = "white", noMessage = false;
 
   const colorVariants = {
     primary: {
@@ -9,8 +9,8 @@
       input: "!text-white !border-white focus:!border-coolgray focus:!text-coolgray placeholder:text-white"
     },
     white: {
-      label: "!text-black !bg-white",
-      input: "!text-black !border-black focus:!border-white focus:!text-white placeholder:text-white"
+      label: "!text-coolgray !bg-white",
+      input: "!text-coolgray !border-coolgray focus:!border-primary focus:!text-white placeholder:text-white"
     }
   }
 </script>
@@ -38,6 +38,6 @@
   {#if !noMessage}
   <Textarea id="message" name="message" placeholder="Uw bericht" rows="4" class="{colorVariants[color].input} bg-transparent rounded-sm border-1 border-darkteal focus:border-gold focus:!ring-0"/>  
   {/if}
-  <Checkbox class="mt-4 text-white" required><span>Ik ga akkoord met de <a href="privacyverklaring" target="_blank" class="text-gold font-bold underline">privacyverklaring</a>*.</span></Checkbox>
-  <Button class="mt-8" type="submit">{submitText ?? 'Contacteer ons'}</Button>
+  <Checkbox class="mt-4 {colorVariants[color].label}" required><span>Ik ga akkoord met de <a href="privacyverklaring" target="_blank" class="text-gold font-bold underline">privacyverklaring</a>*.</span></Checkbox>
+  <Button class="mt-8" type="submit" color={btnColor}>{submitText ?? 'Contacteer ons'}</Button>
 </form>

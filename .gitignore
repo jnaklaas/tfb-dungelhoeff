@@ -12,3 +12,5 @@ vite.config.ts.timestamp-*
 sendgrid.env
 /resources
 /bin
+/.vercel
+/.vscode

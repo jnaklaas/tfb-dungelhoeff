@@ -6,13 +6,16 @@
 	import Hero from "$lib/components/Hero.svelte";
   import Content from "$lib/components/Content.svelte";
 	import Form from "$lib/components/Form.svelte";
-	import Contact from "$lib/components/Contact.svelte";
-
-  import HeroImg from '$lib/images/hero.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
-
-
+	import Contact from "$lib/components/Contact.svelte";  
   import Icon from '$lib/components/Icon.svelte';
-	import Nav from '../../lib/components/Nav.svelte';
+
+  import logoHeylen from "$lib/images/logo-heylen-vastgoed.svg";
+  import ImgExt3 from '$lib/images/Lier_Cam_03_.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
+  import ImgExt2 from '$lib/images/Lier_Cam_02_.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
+  import ImgInt4 from '$lib/images/CAM04.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
+  import ImgKoppel from '$lib/images/koppel.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
+  // import ImgEnv38 from '$lib/images/TRICKS-FOR-BRICKS_LIER_OMGEVINGSBEELDEN_WEB_20230517_038.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
+
 
   /** @type {import('./$types').ActionData} */
   export let form;
@@ -42,10 +45,7 @@
 <article>
   <h1 class="hidden">Contact</h1>
 
-  <Content>
-    <svelte:fragment slot=title>Cordeel, betrouwbare partner voor projectontwikkeling</svelte:fragment>
-    <p>Met Cordeel heb je een betrouwbare partner en ervaren specialist op het vlak van bouwprojecten en ontwikkelingsdossiers. Cordeel kan dan ook bogen op sterke omzetcijfers en beschikt over een stevige solvabiliteit. De geschiedenis van Cordeel gaat zelfs terug tot 1934. Het internationaal familiebedrijf is sindsdien uitgegroeid tot een gevestigde onderneming die actief is over heel Europa, van Frankrijk tot Servië.</p>
-  </Content>
+  <Hero HeroImg={ImgExt3}/>
 
   <Contact>
     <svelte:fragment slot=contactDetails>
@@ -55,6 +55,11 @@
       <p>      
         Mechelsesteenweg 28, Lier
       </p>
+      <h3>Verkopende partijen</h3>
+      <p>
+        <img class="float-right h-[1.4em] mt-1" src="{logoHeylen}" alt="Heylen Vastgoed">
+        <strong>Heylen Vastgoed</strong><br>03 361 00 03</p>
+      <p><strong>Dungelhoeff woonadviseur</strong><br>Thomas Van der Sypt<br>0473 43 02 32</p>
     </svelte:fragment>
     <svelte:fragment slot=form>
       <h2 class="font-semibold text-[2em] text-white">Contactformulier</h2>
@@ -62,6 +67,12 @@
       <Form action="/contact" {fields}></Form>
     </svelte:fragment>
   </Contact>
+
+  <Content>
+    <svelte:fragment slot=title>Cordeel, betrouwbare partner voor projectontwikkeling</svelte:fragment>
+    <p>Met Cordeel heb je een betrouwbare partner en ervaren specialist op het vlak van bouwprojecten en ontwikkelingsdossiers. Cordeel kan dan ook bogen op sterke omzetcijfers en beschikt over een stevige solvabiliteit. De geschiedenis van Cordeel gaat zelfs terug tot 1934. Het internationaal familiebedrijf is sindsdien uitgegroeid tot een gevestigde onderneming die actief is over heel Europa, van Frankrijk tot Servië.</p>
+  </Content>
+
 
 </article>
 

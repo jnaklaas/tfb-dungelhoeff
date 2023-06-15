@@ -29,7 +29,7 @@
       <slot name="contactDetails"><p>Contact details placeholder</p></slot>
     </div>
     
-    <div class="z-20 row-start-1 col-end-13 order-first col-span-6 p-6 mt-6 md:mt-0 md:p-8 xl:p-12 bg-primary text-black">
+    <div class="z-20 row-start-1 col-end-13 order-first col-span-6 p-6 md:!pl-0 mt-6 md:mt-0 md:p-8 xl:p-12 bg-primary text-white">
       <slot name="form"/>
     </div>
 
