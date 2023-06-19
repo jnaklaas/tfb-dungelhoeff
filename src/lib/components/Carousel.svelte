@@ -16,6 +16,7 @@
     showCaptions={false} showThumbs={false} 
     loop duration={10000}
     divClass="overflow-hidden relative"
+    thumbClass="w-full"
     />
   </svelte:element>
 </section>
@@ -34,3 +35,9 @@
   </div>
   {/if}
   </section> -->
+
+  <style type="postcss">
+    :global(#default-carousel img) {
+      @apply w-full;
+    }
+  </style>

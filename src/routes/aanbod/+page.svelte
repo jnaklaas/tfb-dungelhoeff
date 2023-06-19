@@ -9,6 +9,7 @@
   import DownloadModal from '$lib/components/DownloadModal.svelte';
 	import Availability from '$lib/components/Availability.svelte';
   import Cta from "$lib/components/Cta.svelte";
+	import Quote from '$lib/components/Quote.svelte';
 
   import ImgExt3 from '$lib/images/Lier_Cam_03_.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
   import ImgExt2 from '$lib/images/Lier_Cam_02_.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
@@ -93,39 +94,50 @@
 
 <article>
   <h1 class="hidden">Aanbod</h1>
-  <Hero HeroImg={ImgExt3}/>
+  <Hero image={ImgExt3}/>
 
   <Content>
-    <svelte:fragment slot="title">Waar ga jij voor in Villa Vigo?</svelte:fragment>
-    Villa Vigo bestaat uit 21 <strong>kwaliteitsvolle appartementen</strong>, verdeeld over twee gebouwen die 2 en 3 verdiepingen tellen. De appartementen zijn 64 tot 99m2 groot, hebben 1 of 2 volwaardige slaapkamers en beschikken allemaal over een ruim terras.
+    <svelte:fragment slot="title">Waar ga jij voor in <strong>Villa Vigo</strong>?</svelte:fragment>
+    <p>
+      Villa Vigo bestaat uit 21 <strong>kwaliteitsvolle appartementen</strong>, verdeeld over twee gebouwen die 2 en 3 verdiepingen tellen. De appartementen zijn 64 tot 99m2 groot, hebben 1 of 2 volwaardige slaapkamers en beschikken allemaal over een ruim terras.
+    </p>
+    <Cta href="#ontdek-de-appartementstypes" color="primary">Ontdek de appartementstypes</Cta>
   </Content>
+
+  <Quote>Verhuisplannen op korte termijn? Villa Vigo wordt al in het najaar van 2023 opgeleverd!</Quote>
   
-  <Content image={ImgExt2} boxedText>
-    <svelte:fragment slot="title">Voluit comfortabel wonen</svelte:fragment>
+  <Content image={ImgExt2}>
+    <svelte:fragment slot="title">Voluit <strong>comfortabel</strong> wonen</svelte:fragment>
     <p>Binnen of buiten? Waar je ook bent, je zal als eigenaar trots zijn op je woning in Villa Vigo. De gebouwen hebben dankzij de hoogwaardige, eigentijdse architectuur en kwalitatieve, duurzame materialen een <strong>stijlvolle uitstraling</strong>. De ruime appartementen zijn doordacht ingedeeld en hebben een mooi zuid-zuidwest georiënteerd inpandig terras. Grote raampartijen laten véél licht binnen in je woonkamer.</p>
+    <Cta color="primary" href="/contact">Contacteer onze woonadviseur</Cta>
   </Content>
   
   <Content image={ImgInt4} imageLeft>
-    <svelte:fragment slot="title">Kwaliteit gekoppeld aan duurzaamheid</svelte:fragment>
+    <svelte:fragment slot="title"><strong>Kwaliteit</strong> gekoppeld aan <strong>duurzaamheid</strong></svelte:fragment>
     <p>De <strong>afwerking</strong> kan je bij Villa Vigo voor een stuk nog zelf bepalen. Zo is inspraak bijvoorbeeld mogelijk voor je keuken, sanitair en vloer-en wandbekleding. Op die manier wordt je appartement écht naar je wens gerealiseerd. Ook qua <strong>technieken</strong> wordt slim ingezet. Zo is er <strong>vloerverwarming</strong> voorzien – wat altijd super aangenaam aanvoelt – en zal de verwarming gebeuren via <strong>warmtepompen</strong>. Dat is naast duurzaam en energiezuinig ook zeer handig. Met de warmtepomp kan je ruimtes zowel verwarmen als koelen. Een ventilatiesysteem D garandeert je dan weer een optimale luchtkwaliteit, warmterecuperatie en energiebesparing.</p>
   </Content>
 
-  <Content>
+  <Quote>De afwerking kan je bij Villa Vigo nog deels zelf bepalen.</Quote>
+
+  <Content id="ontdek-de-appartementstypes">
     <svelte:fragment slot="title">Ontdek de appartementstypes</svelte:fragment>
-    <p>Villa Vigo telt 21 appartementen met 1 of 2 slaapkamers, die verdeeld zijn over 2 gebouwen. Alle appartementen hebben een ruim inpandig terras en zijn zeer doordacht ingericht. Geen vierkante meter gaat verloren.</p>
-    <p>Ontdek hieronder de Villa Vigo voorbeeldplannen. Wenst u graag het volledige aanbod te bekijken? Maak dan meteen een afspraak met één van onze woonadviseurs.</p>
+    <p><strong>Villa Vigo telt 21 appartementen met 1 of 2 slaapkamers</strong>, die verdeeld zijn over 2 gebouwen. Alle appartementen hebben een ruim inpandig terras en zijn zeer doordacht ingericht. Geen vierkante meter gaat verloren.</p>
+    <p><strong>Ontdek hieronder de Villa Vigo voorbeeldplannen</strong>. Wenst u graag het volledige aanbod te bekijken? Maak dan meteen een afspraak met één van onze woonadviseurs.</p>
   </Content>
 
   <Availability id="aanbod" units={data.units} on:downloadFile={displayDownloadModal}>
     <svelte:fragment slot="cta">
-      <Cta href="/contact" color="primary">Maak een afspraak</Cta>
+      <Cta href="/contact" color="primary">Bezorg me plannen en prijzen</Cta>
     </svelte:fragment>
   </Availability>
   
-  <Content image={ImgKoppel} boxedText>
-    <svelte:fragment slot="title">Investeren in Villa Vigo? Slim!</svelte:fragment>
-    <p>Vastgoed blijft een <strong>veilige en rendabele investering</strong>. En investeren in Villa Vigo is zeker een slimme zet. Gesitueerd op een betaalbare centrumlocatie is er genoeg potentieel met een grote en financieel gezonde huurderspool. Dit garandeert dan ook mooie verhuurprijzen die vanaf de eerste dag een <strong>interessant huurrendement</strong> kunnen opleveren. Centrumlocaties zijn bovendien schaars en leveren bij verkoop een hogere meerwaarde op. Verder mag je bij Villa Vigo ook rekenen op een <strong>snelle oplevertijd</strong> – voorjaar 2024 al – waardoor je ook snel over huurinkomsten beschikt. En het succes van alle voorgaande projecten op de Dungelhoeff-site toont aan dat de interesse groot is!</p>
+  <Content image="{ImgKoppel}" imageSquare imageClass="object-left">
+    <svelte:fragment slot="title">Investeren in Villa Vigo? <strong>Slim!</strong></svelte:fragment>
+    <p>Vastgoed blijft een <strong>veilige en rendabele investering</strong>. En investeren in Villa Vigo is zeker een slimme zet. Gesitueerd op een betaalbare centrumlocatie is er genoeg potentieel met een grote en financieel gezonde huurderspool. Dit garandeert dan ook mooie verhuurprijzen die vanaf de eerste dag een <strong>interessant huurrendement</strong> kunnen opleveren. 
+    </p><p>Centrumlocaties zijn bovendien schaars en leveren bij verkoop een hogere meerwaarde op. Verder mag je bij Villa Vigo ook rekenen op een <strong>snelle oplevertijd</strong> – najaar 2023 al – waardoor je ook snel over huurinkomsten beschikt. En het succes van alle voorgaande projecten op de Dungelhoeff-site toont aan dat de interesse groot is!</p>
+    <Cta color="primary" href="/contact">Bereken mijn rendement</Cta>
   </Content>
+
   
   <!-- <Content image={HeroImg} boxedText>
     <svelte:fragment slot="title">Extra interessant: verlaagd btw-tarief van 6%</svelte:fragment>

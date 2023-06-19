@@ -92,7 +92,7 @@
           {#each fields as field}
           { @const [breakpoint, name] = field.includes(':') ? field.split(':') : [ null, field ] }
           <TableBodyCell
-            class="text-coolgray {unit.available ? '' : '!text-white'} { breakpoint ? `hidden ${breakpoint}:table-cell`: ''}"
+            class="text-coolgray font-semibold {unit.available ? '' : '!text-white'} { breakpoint ? `hidden ${breakpoint}:table-cell`: ''}"
             >
             {strings[name].prefix}{strings[name].transform ? strings[name].transform(unit[name]) : unit[name]}{@html strings[name].suffix}
           </TableBodyCell>
@@ -110,9 +110,9 @@
               <button 
                 on:click={downloadFile}
                 data-file="{unit.id}"
-                class="font-medium text-coolgray hover:underline"
+                class="font-semibold text-coolgray hover:underline"
                 >
-                Download<Icon name="download" size="1em" class="ml-2"/>
+                Download voorbeeldplannen <Icon name="download" size="1em" class="ml-2"/>
               </button>
             {:else}
               <!-- <button class="font-medium hover:underline dark:!text-teal-04 cursor-not-allowed" disabled>

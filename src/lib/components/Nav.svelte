@@ -35,6 +35,7 @@
 <Navbar let:hidden let:toggle fluid=true
   class="!bg-transparent dark:text-white !px-0 py-base"
 >
+  <!-- <NavBrand href="/" class="z-50"> -->
   <NavBrand href="/">
     <img
       src="{logoSrc}"

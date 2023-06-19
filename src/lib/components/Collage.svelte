@@ -4,16 +4,25 @@
 
   export let images = [];
   export let lightbox = false;
+  export let mirror = false;
 
   $: largeImages = images.map((image)=> {
     return image.pop();
   });
 
   const gridItemClasses = [
-    'col-span-6',
-    'col-span-6 row-start-2 col-start-1',
-    'col-span-6 row-span-2 flex flex-col justify-center'
+    `col-span-6 ${ mirror ? 'col-start-7' : ''}`,
+    `col-span-6 row-span-2 flex flex-col justify-center ${ mirror ? 'row-start-1' : ''}`,
+    `col-span-6 row-start-2  ${ mirror ? 'col-start-7' : ''}`,
   ];
+  
+
+  const imageClasses = [
+    'aspect-square',
+    'aspect-[3/4]',
+    'aspect-square'
+  ];
+
 </script>
 
 {#if images.length === 3}
@@ -30,11 +39,11 @@
               data-pswp-width={largeImages[i].width}
               data-pswp-height={largeImages[i].height}
             >
-              <Img src={image} class=w-full/>
+              <Img src={image} class="w-full {imageClasses[i]} object-cover"/>
             </a>
           </div>
           {:else}
-          <Img src={image} class=w-full/>
+          <Img src={image} class="w-full {imageClasses[i]} object-cover"/>
           {/if}
       </div>
     {/each}

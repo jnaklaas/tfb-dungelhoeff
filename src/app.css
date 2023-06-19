@@ -13,15 +13,15 @@
   
   /* Headings */
   h1, h2, h3, h4, h5, h6 { @apply heading-type }
-  h1, h2 {  @apply mb-6 text-[2.6666666667em] }
+  h1, h2 {  @apply mb-6 text-[2em] }
   h1 strong, h2 strong, h3 strong { @apply font-black }
-  h3 { @apply font-bold font-heading text-primary mb-0 text-[1.333333333333em] }
+  h3 { @apply font-semibold font-heading text-primary mb-0 text-[1.333333333333em] }
   h2:not(:first-child) { @apply mt-6 }
   h3:not(:first-child) { @apply mt-6 }
   
   /* Other typography */
   p { @apply mb-3 font-normal}
-  p strong, blockquote strong { @apply font-semibold}
+  p strong { @apply font-semibold}
 
   /* Layout */
   html, body { @apply h-full }
@@ -46,7 +46,7 @@
   .nav-brand { @apply h-14 sm:h-16 md:h-14 2xl:h-20 }
   
   .hero-img { @apply
-    object-cover object-[center_90%]
+    /* object-cover object-[center_90%] */
     max-h-[calc(80vh_-_7rem)]
     lg:max-h-[calc(100vh_-_theme(spacing.44))]
     xl:max-h-[calc(100vh_-_theme(spacing.44))]

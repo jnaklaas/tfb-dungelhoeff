@@ -45,7 +45,7 @@
 <article>
   <h1 class="hidden">Contact</h1>
 
-  <Hero HeroImg={ImgExt3}/>
+  <!-- <Hero image={ImgExt3}/> -->
 
   <Contact>
     <svelte:fragment slot=contactDetails>
@@ -69,7 +69,7 @@
   </Contact>
 
   <Content>
-    <svelte:fragment slot=title>Cordeel, betrouwbare partner voor projectontwikkeling</svelte:fragment>
+    <svelte:fragment slot=title><strong>Cordeel</strong>, betrouwbare partner voor projectontwikkeling</svelte:fragment>
     <p>Met Cordeel heb je een betrouwbare partner en ervaren specialist op het vlak van bouwprojecten en ontwikkelingsdossiers. Cordeel kan dan ook bogen op sterke omzetcijfers en beschikt over een stevige solvabiliteit. De geschiedenis van Cordeel gaat zelfs terug tot 1934. Het internationaal familiebedrijf is sindsdien uitgegroeid tot een gevestigde onderneming die actief is over heel Europa, van Frankrijk tot Servië.</p>
   </Content>
 
