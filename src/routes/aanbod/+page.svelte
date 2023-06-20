@@ -10,6 +10,7 @@
 	import Availability from '$lib/components/Availability.svelte';
   import Cta from "$lib/components/Cta.svelte";
 	import Quote from '$lib/components/Quote.svelte';
+	import ContactModal from '$lib/components/ContactModal.svelte';
 
   import ImgExt3 from '$lib/images/Lier_Cam_03_.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
   import ImgExt2 from '$lib/images/Lier_Cam_02_.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
@@ -24,6 +25,8 @@
   export let form;
 
   let toggleModal = false;
+  let togglePlannenModal = false;
+  let toggleRendementModal = false;
   let file, filetype;
 
   const displayDownloadModal = (e) => {
@@ -82,8 +85,8 @@
 
   onMount(async () => {
     // Form response feedback + download
-    if(form && form.response.success) {
-      downloadFile(`/${form.response.file}.pdf`);
+    if(form && form.response.success && form.response.file) {
+      downloadFile(`/dungelhoeff-${form.response.file}.pdf`);
       showFormResponseNotification = true;
       setTimeout(() => {
         showFormResponseNotification = false;
@@ -94,19 +97,19 @@
 
 <article>
   <h1 class="hidden">Aanbod</h1>
-  <Hero image={ImgExt3}/>
+  <Hero image={ImgExt3} imageFullHeight/>
 
   <Content>
     <svelte:fragment slot="title">Waar ga jij voor in <strong>Villa Vigo</strong>?</svelte:fragment>
     <p>
-      Villa Vigo bestaat uit 21 <strong>kwaliteitsvolle appartementen</strong>, verdeeld over twee gebouwen die 2 en 3 verdiepingen tellen. De appartementen zijn 64 tot 99m2 groot, hebben 1 of 2 volwaardige slaapkamers en beschikken allemaal over een ruim terras.
+      Villa Vigo bestaat uit 21 <strong>kwaliteitsvolle appartementen</strong>, verdeeld over twee gebouwen die 2 en 3 verdiepingen tellen. De appartementen zijn 64 tot 99m<sup>2</sup> groot, hebben 1 of 2 volwaardige slaapkamers en beschikken allemaal over een ruim terras.
     </p>
     <Cta href="#ontdek-de-appartementstypes" color="primary">Ontdek de appartementstypes</Cta>
   </Content>
 
   <Quote>Verhuisplannen op korte termijn? Villa Vigo wordt al in het najaar van 2023 opgeleverd!</Quote>
   
-  <Content image={ImgExt2}>
+  <Content image={ImgExt2} imageClass="object-[95%_center]">
     <svelte:fragment slot="title">Voluit <strong>comfortabel</strong> wonen</svelte:fragment>
     <p>Binnen of buiten? Waar je ook bent, je zal als eigenaar trots zijn op je woning in Villa Vigo. De gebouwen hebben dankzij de hoogwaardige, eigentijdse architectuur en kwalitatieve, duurzame materialen een <strong>stijlvolle uitstraling</strong>. De ruime appartementen zijn doordacht ingedeeld en hebben een mooi zuid-zuidwest georiënteerd inpandig terras. Grote raampartijen laten véél licht binnen in je woonkamer.</p>
     <Cta color="primary" href="/contact">Contacteer onze woonadviseur</Cta>
@@ -127,7 +130,7 @@
 
   <Availability id="aanbod" units={data.units} on:downloadFile={displayDownloadModal}>
     <svelte:fragment slot="cta">
-      <Cta href="/contact" color="primary">Bezorg me plannen en prijzen</Cta>
+      <Cta on:click={() => togglePlannenModal = true} color="primary">Bezorg me plannen en prijzen</Cta>
     </svelte:fragment>
   </Availability>
   
@@ -135,7 +138,7 @@
     <svelte:fragment slot="title">Investeren in Villa Vigo? <strong>Slim!</strong></svelte:fragment>
     <p>Vastgoed blijft een <strong>veilige en rendabele investering</strong>. En investeren in Villa Vigo is zeker een slimme zet. Gesitueerd op een betaalbare centrumlocatie is er genoeg potentieel met een grote en financieel gezonde huurderspool. Dit garandeert dan ook mooie verhuurprijzen die vanaf de eerste dag een <strong>interessant huurrendement</strong> kunnen opleveren. 
     </p><p>Centrumlocaties zijn bovendien schaars en leveren bij verkoop een hogere meerwaarde op. Verder mag je bij Villa Vigo ook rekenen op een <strong>snelle oplevertijd</strong> – najaar 2023 al – waardoor je ook snel over huurinkomsten beschikt. En het succes van alle voorgaande projecten op de Dungelhoeff-site toont aan dat de interesse groot is!</p>
-    <Cta color="primary" href="/contact">Bereken mijn rendement</Cta>
+    <Cta color="primary" on:click={() => toggleRendementModal = true}>Bereken mijn rendement</Cta>
   </Content>
 
   
@@ -147,13 +150,17 @@
 </article>
 
 <DownloadModal bind:toggleModal={toggleModal} bind:file={file} bind:filetype={filetype}/>
+<ContactModal bind:toggleModal={togglePlannenModal} title="Bezorg me plannen en prijzen"/>
+<ContactModal bind:toggleModal={toggleRendementModal} title="Bereken mijn rendement"/>
+
 
 <div class="fixed right-0 bottom-0 m-4 z-30">
 {#if form && form.response }
 <Toast 
   transition={fly} params="{{x: 200}}"
   color="{form.response.success ? 'green': 'red'}"
-  divClass="mb-4 w-full max-w-xs p-4"
+  divClass="mb-4 w-full max-w-xs p-4 bg-white ring-1 {form.response.success ? 'ring-green-100': 'ring-red-100'} {form.response.success ? 'text-green-500': 'text-red-500'} shadow"
+  defaultIconClass="w-8 h-8 mr-2"
   bind:open={showFormResponseNotification}>
   <svelte:fragment slot="icon">
     <Icon name={form.response.success ? 'circleCheck' : 'triangleExclamation'}/>
@@ -166,7 +173,8 @@
 <Toast 
   transition={fly} params="{{x: 200}}"
   color="{downloadResponse.success ? 'green': 'red'}"
-  divClass="mb-4 w-full max-w-xs p-4"
+  divClass="mb-4 w-full max-w-xs p-4 bg-white ring-1 {downloadResponse.success ? 'ring-green-100': 'ring-red-100'} {downloadResponse.success ? 'text-green-500': 'text-red-500'} shadow"
+defaultIconClass="w-8 h-8 mr-2"
   bind:open={showDownloadResponseNotification}>
   <svelte:fragment slot="icon">
     <Icon name={downloadResponse.success ? 'circleCheck' : 'triangleExclamation'}/>

@@ -12,14 +12,16 @@
     {id: 'firstname', label: 'Voornaam*'},
     {id: 'name', label: 'Naam*'},
     {id: 'email', type: 'email', label: 'E-mail*'},
+    {id: 'tel', type: 'tel', label: 'Telefoonnummer*'},
     {id: 'file', type: 'hidden', value: file},
+    {id: 'subject', type: 'hidden', value: 'Download'},
   ];
 </script>
 
 
 <Modal title="Download {filetype} {file ?? ''}" autoclose={false} bind:open="{toggleModal}">
   <slot name='message'>
-    <Form bind:fields="{fields}" action="/aanbod" submitText="Download" color="white" btnColor="primary" noMessage></Form>
+    <Form bind:fields="{fields}" action="?/download" submitText="Download" color="white" btnColor="primaryOutline" noMessage></Form>
   </slot>
   <svelte:fragment slot='footer'></svelte:fragment>
 </Modal>

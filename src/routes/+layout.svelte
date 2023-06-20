@@ -32,7 +32,7 @@
   inject({ mode: dev ? 'development' : 'production' });
 </script>
 
-<NotificationBanner>Extra interessant: verlaagd btw-tarief van 6%</NotificationBanner>
+<!-- <NotificationBanner>Extra interessant: verlaagd btw-tarief van 6%</NotificationBanner> -->
 
 <!-- <NotificationModal repeatNthRequest=6/> -->
 <header class="container-fluid-wide">

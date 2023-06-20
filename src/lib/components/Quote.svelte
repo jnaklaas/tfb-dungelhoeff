@@ -2,8 +2,8 @@
 	import Container from "./Container.svelte";
   import { Blockquote } from 'flowbite-svelte'
 
-  export let author;
-  export let authorTitle;
+  export let author = '';
+  export let authorTitle = '';
 </script>
 
 <Container grid class="mb-12 md:mb-12 xl:mb-24">

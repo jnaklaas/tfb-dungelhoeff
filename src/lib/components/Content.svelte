@@ -6,12 +6,12 @@
   export let boxedText = false;
   export let boxColor = "primary text-white";
   export let textContentClass = '';
-  export let image;
+  export let image = null;
   export let imageLeft = false;
   export let imageThumb = null;
   export let imageClass = '';
   export let imagePortrait = false;
-  export let imageSquare = false;
+  export let imageLandscape = false;
   export let imageCaption = null;
   export let lightbox = false;
 
@@ -25,9 +25,9 @@
   $: largeImg = (image && image.length > 0) ? image.pop() : '';
   $: imageAspectRatio = aspectRatios[
       imagePortrait ? 'portrait' : 
-      imageSquare ? 'square' : 
+      imageLandscape ? 'landscape' : 
       boxedText ? 'boxed' : 
-      'landscape'
+      'square'
     ];
 </script>
 
@@ -71,7 +71,7 @@
     <div class="{textContentClass} z-10 col-span-6 row-span-2
       {imageLeft ? 'col-end-13 xl:col-start-7' : '' }
       {!imageLeft && !boxedText ? 'col-start-1 xl:col-start-2' : '' }
-      {boxedText ? `bg-${boxColor} p-4 md:p-8 xl:p-12 row-start-2 md:-mt-24 xl:-mt-36` : 'row-start-1 md:mt-24 xl:col-span-5' }
+      {boxedText ? `bg-${boxColor} p-4 md:p-8 xl:p-12 row-start-2 md:-mt-60 xl:-mt-60` : 'row-start-1 md:mt-24 xl:col-span-5' }
     ">
       {#if $$slots.title}<h2 class="{boxedText ?'' : 'text-primary'}"><slot name="title">Default title</slot></h2>{/if}
       <slot><p>Default text</p></slot>

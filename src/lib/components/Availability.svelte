@@ -7,7 +7,7 @@
   export let units = [];
   export let title = "";
   // possible fields: "id","type","floor","rooms","availability","surfaceGross","terraceGarden","groundSurface","architectCost","constructionCost","price","btwArchitect","basisakte","registratierechten","btwConstructies","erelonen","aktekosten","btwAktekostenErelonen","hypKantoor","totalPrice"
-  export let fields = ['rooms', 'totalPrice'];
+  export let fields = ['rooms', 'surfaceGross', 'totalPrice'];
   // export let showUnavailable = false;
   const sqm = '&#13217;';
 
@@ -46,7 +46,7 @@
       title: "Tot. opp.",
       prefix: "",
       suffix: "m<sup>2</sup>",
-      transform: (v) => parseFloat(v).toLocaleString('nl-BE', { minimumFractionDigits: 1 })
+      transform: null//(v) => parseFloat(v).toLocaleString('nl-BE', { minimumFractionDigits: 1 })
     },
     terraceGarden: {
       title: "Terras / tuin",

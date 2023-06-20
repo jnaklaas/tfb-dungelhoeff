@@ -14,6 +14,7 @@
   import ImgExt2 from '$lib/images/Lier_Cam_02_.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
   import ImgInt4 from '$lib/images/CAM04.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
   import ImgKoppel from '$lib/images/koppel.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
+  import logoCordeel from '$lib/images/logo-cordeel.svg';
   // import ImgEnv38 from '$lib/images/TRICKS-FOR-BRICKS_LIER_OMGEVINGSBEELDEN_WEB_20230517_038.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
 
 
@@ -71,8 +72,9 @@
   <Content>
     <svelte:fragment slot=title><strong>Cordeel</strong>, betrouwbare partner voor projectontwikkeling</svelte:fragment>
     <p>Met Cordeel heb je een betrouwbare partner en ervaren specialist op het vlak van bouwprojecten en ontwikkelingsdossiers. Cordeel kan dan ook bogen op sterke omzetcijfers en beschikt over een stevige solvabiliteit. De geschiedenis van Cordeel gaat zelfs terug tot 1934. Het internationaal familiebedrijf is sindsdien uitgegroeid tot een gevestigde onderneming die actief is over heel Europa, van Frankrijk tot Servië.</p>
+    <p>
+      <img class="h-8 mt-8" src="{logoCordeel}" alt="Cordeel"></p>
   </Content>
-
 
 </article>
 
@@ -81,7 +83,7 @@
   <Toast 
     transition={fly} params="{{x: 200}}"
     color="{form.response.success ? 'green': 'red'}"
-    divClass="mb-4 w-full max-w-xs p-4 bg-white ring-1 ring-{form.response.success ? 'green': 'red'}-100 text-{form.response.success ? 'green': 'red'}-500 shadow"
+    divClass="mb-4 w-full max-w-xs p-4 bg-white ring-1 {form.response.success ? 'ring-green-100': 'ring-red-100'} {form.response.success ? 'text-green-500': 'text-red-500'} shadow"
     defaultIconClass="w-8 h-8 mr-2"
     bind:open={showFormResponseNotification}>
     <svelte:fragment slot="icon">

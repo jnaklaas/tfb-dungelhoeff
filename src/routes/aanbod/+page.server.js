@@ -1,15 +1,22 @@
 import csv from 'fast-csv';
 import unitsCsv from '$lib/server/units.csv?raw';
+import nodemailer from 'nodemailer';
+import { sql } from '@vercel/postgres';
 
-let mailOptions = {
-	// from: 'janklaas@wildlymild.com',
-	from: 'info@dungelhoeff-lier.be',
-	// to: ['pm@brix.be', 'maxim@vanhalme.be'],
-	to: 'janklaas@wildlymild.com',
-	subject: 'Download formulier Dungelhoeff',
-	text: 'Download via dungelhoeff-lier.be\n\n',
-	html: '<h2>Download via dungelhoeff-lier.be</h2>'
-};
+const smtpPort = !isNaN(process.env.SMTP_PORT) ? parseInt(process.env.SMTP_PORT) : 465;
+const transporter = nodemailer.createTransport({
+	host: process.env.SMTP_HOST || '127.0.0.1',
+	port: smtpPort,
+	secure: smtpPort === 465,
+	auth: {
+		user: process.env.SMTP_USER,
+		pass: process.env.SMTP_PASS
+	},
+	tls: {
+		// do not fail on invalid certs
+		rejectUnauthorized: false
+	}
+});
 
 const readCsv = async (file, headers = true, delimiter = ';') => {
 	return new Promise((resolve, reject) => {
@@ -31,46 +38,64 @@ export async function load({ params }) {
 
 /** @type {import('./$types').Actions} */
 export const actions = {
-	default: async (event) => {
-		const data = await event.request.formData();
-
-		console.log(data);
-
-		mailOptions.text += [...data]
-			.map((field) => {
-				return `${field[0]}: ${field[1]}`;
-			})
-			.join('\n');
-
-		mailOptions.html +=
-			'<table>' +
-			[...data]
-				.map((field) => {
-					return `<tr><td><b>${field[0]}</b>:</td><td>${field[1]}</td></tr>`;
-				})
-				.join('<br>') +
-			'</table>';
-
+	contact: async (event) => {
+		const formDataEntries = await event.request.formData();
+		const formData = Object.fromEntries(formDataEntries);
+		const mailOptions = getMailOptions(formData);
 		let response = {};
 
-		await sgMail
-			.send(mailOptions)
-			.then(() => {
-				response.file = [...data].find((field) => {
-					return field[0] === 'file';
-				})[1];
-				response.success = response.file ? true : false;
-				response.message = response.file
-					? 'Uw download begint zo dadelijk.'
-					: 'Er liep iets fout, contacteer ons via info@dungelhoeff-lier.be';
-			})
-			.catch((error) => {
-				console.log(error);
-				response.success = false;
-				response.message = 'Er liep iets fout, contacteer ons via info@dungelhoeff-lier.be';
-			});
+		try {
+			// submit to database
+			await sql`INSERT INTO dungelhoeff_form_submissions (firstname, lastname, email, tel, city, message)
+				VALUES(${formData.firstname ?? ''}, ${formData.lastname ?? ''}, ${formData.email ?? ''}, ${
+				formData.tel ?? ''
+			}, ${formData.city ?? ''}, ${formData.message ?? ''})`;
 
-		return { response };
+			// send email
+			await transporter.sendMail(mailOptions);
+
+			// return
+			response.success = true;
+			response.message = 'Uw bericht werd verzonden.';
+		} catch (error) {
+			console.error(error);
+			response.success = false;
+			response.message = 'Er liep iets fout, contacteer ons via info@dungelhoeff-lier.be';
+		} finally {
+			return { response };
+		}
+	},
+
+	download: async (event) => {
+		const formDataEntries = await event.request.formData();
+		const formData = Object.fromEntries(formDataEntries);
+		const mailOptions = getMailOptions(formData);
+		let response = {};
+
+		try {
+			// submit to database
+			const message = `Download plan ${formData.file ?? ''}`;
+			await sql`INSERT INTO dungelhoeff_form_submissions (firstname, lastname, email, tel, city, message)
+				VALUES(${formData.firstname ?? ''}, ${formData.lastname ?? ''}, ${formData.email ?? ''}, ${
+				formData.tel ?? ''
+			}, ${formData.city ?? ''}, ${message})`;
+
+			// send email
+			await transporter.sendMail(mailOptions);
+
+			if (!formData.file) throw 'Illegal download attempt';
+			response.file = formData.file;
+
+			// return
+			response.success = true;
+			response.message = 'Uw bericht werd verzonden.';
+		} catch (error) {
+			console.error(error);
+			response.success = false;
+			response.message = 'Er liep iets fout, contacteer ons via info@dungelhoeff-lier.be';
+		} finally {
+			return { response };
+		}
 	}
 };
 
@@ -132,4 +157,33 @@ const getUnitsFromApi = async () => {
 		const units = await getUnitsFromCsv();
 		return units;
 	}
+};
+
+const getMailOptions = (formData) => {
+	const subject = formData.subject ?? 'Contactaanvraag';
+	delete formData.subject;
+	let mailOptions = {
+		from: 'info@dungelhoeff-lier.be',
+		// to: ['pm@brix.be', 'maxim@vanhalme.be'],
+		// to: 'jo@tricksforbricks.be',
+		to: 'janklaas@wildlymild.com',
+		subject: `${subject} formulier Dungelhoeff`,
+		text: `${subject} via dungelhoeff-lier.be\n\n`,
+		html: `<h2>${subject} via dungelhoeff-lier.be</h2>`
+	};
+
+	mailOptions.text += Object.entries(formData)
+		.map(([k, v]) => `${k}: ${v}`)
+		.join('\n');
+
+	mailOptions.html +=
+		'<table>' +
+		Object.entries(formData)
+			.map(([k, v]) => {
+				return `<tr><td><b>${k}</b>:</td><td>${v}</td></tr>`;
+			})
+			.join('<br>') +
+		'</table>';
+
+	return mailOptions;
 };

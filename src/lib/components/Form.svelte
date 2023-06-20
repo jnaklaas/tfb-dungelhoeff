@@ -1,7 +1,7 @@
 <script>
 	import Button from "./Button.svelte";
   import { FloatingLabelInput, Textarea, Label, Checkbox } from "flowbite-svelte";
-  export let action, fields = undefined, submitText, color = "primary", btnColor = "white", noMessage = false;
+  export let action, fields = undefined, submitText, color = "primary", btnColor = "whiteOutline", noMessage = false;
 
   const colorVariants = {
     primary: {
@@ -10,7 +10,7 @@
     },
     white: {
       label: "!text-coolgray !bg-white",
-      input: "!text-coolgray !border-coolgray focus:!border-primary focus:!text-white placeholder:text-white"
+      input: "!text-coolgray !border-coolgray focus:!border-primary focus:!text-coolgray placeholder:text-coolgray"
     }
   }
 </script>
