@@ -15,7 +15,7 @@
   {title}
   autoclose 
   outsideclose
-  open="{ browser && !(modalCounter % repeatNthRequest) }"
+  open="{ browser && !((modalCounter - 1) % repeatNthRequest) }"
   backdropClasses="bg-coolgray bg-opacity-50 dark:bg-opacity-80 backdrop-blur"
   >
   <slot>

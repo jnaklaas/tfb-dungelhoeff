@@ -93,7 +93,7 @@
 <NotificationModal repeatNthRequest=2 title="Infoavond donderdag 6 juli 2023">
   <p>Kom kennis maken met Villa Vigo op <strong>donderdag 6 juli 2023 van 17u tot 20u</strong>. <strong>Bezoek de bijna afgewerkte appartementen, ontdek de plannen en prijzen én kom alles te weten over onze energiezuinige technieken!</strong></p>
 
-  <p>Om iedereen persoonlijk te begeleiden, willen wij u vragen om <a href="/infodag">vooraf in te schrijven</a>.</p>
+  <p>Om iedereen persoonlijk te begeleiden, willen wij u vragen om <a href="/infoavond">vooraf in te schrijven</a>.</p>
 
   <p>We verwelkomen u graag in de Kazernedreef te Lier.</p>
   
@@ -125,7 +125,8 @@
     <p>Wil jij eigentijds, comfortabel en duurzaam wonen? Én ook nog eens op een superligging in hartje Lier? Dan mag je bij Villa Vigo héél veel vakjes aanvinken. 
       Met een appartement in Villa Vigo heb je <strong>alles om voluit van het leven te genieten</strong>. 
     </p>
-    <Cta href="/aanbod" color="primary">Ontdek het aanbod</Cta>
+    <Cta href="/aanbod" color="primary">Ontdek het aanbod</Cta><br>
+    <Cta href="/infoavond" color="primary">Inschrijven infoavond</Cta>
   </Content>
 
   

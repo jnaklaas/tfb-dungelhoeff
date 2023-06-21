@@ -1,0 +1,1 @@
+DELETE FROM dungelhoeff_form_submissions WHERE form_submission_id=0

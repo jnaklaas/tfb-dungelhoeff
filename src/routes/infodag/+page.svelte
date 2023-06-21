@@ -59,7 +59,7 @@
   <svelte:fragment slot=form>
     <h2 class="font-semibold text-[2em] text-white">Registratieformulier</h2>
     {#if form && form.response.success} <p class="text-green-600 font-semibold">{form.response.message}</p>{/if}
-    <Form action="/infodag" {fields} submitText="Registreer" noMessage></Form>
+    <Form action="/infoavond" {fields} submitText="Registreer" noMessage></Form>
   </svelte:fragment>
 </Contact>
 
