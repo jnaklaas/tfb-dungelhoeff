@@ -86,8 +86,8 @@
 
   onMount(async () => {
     // Form response feedback + download
-    if(form && form.response.success && form.response.file) {
-      downloadFile(`/dungelhoeff-${form.response.file}.pdf`);
+    if(form && form.response.success) {
+      if (form.response.file) downloadFile(`/dungelhoeff-${form.response.file}.pdf`);
       showFormResponseNotification = true;
       setTimeout(() => {
         showFormResponseNotification = false;
