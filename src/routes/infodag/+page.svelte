@@ -15,6 +15,7 @@
   import Icon from '$lib/components/Icon.svelte';
 
   import ImgEnv16 from '$lib/images/env16.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
+  import ImgExt3 from '$lib/images/ext3.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
 
   /** @type {import('./$types').ActionData} */
   export let form;
@@ -64,7 +65,7 @@
 
 <Quote>Ontdek de voordelen van wonen in Villa Vigo ter plaatse op onze infoavond!</Quote>
 
-<Image src={ImgEnv16} width="full" class="!mb-0"></Image>
+<Image src={ImgExt3} width="full" class="!mb-0"></Image>
 
 
 {#if form && form.response }

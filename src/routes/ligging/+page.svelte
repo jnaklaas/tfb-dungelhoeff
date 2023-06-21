@@ -17,6 +17,7 @@
   import ImgEnv18 from '$lib/images/env18.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
   import ImgEnv31 from '$lib/images/env31.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
   import ImgEnv40 from '$lib/images/env40.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
+  import Img18 from '$lib/images/img18.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
 
   
   // /** @type {import('./$types').PageData} */
@@ -56,7 +57,7 @@
     
   </Content>
 
-  <Collage images={[ImgEnv18, ImgEnv31, ImgEnv40]} lightbox/>
+  <Collage images={[ImgEnv18, ImgEnv31, Img18]} lightbox/>
 
   <Quote>Villa Vigo is dé plek om rustig en comfortabel te wonen</Quote>
 
