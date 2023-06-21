@@ -51,7 +51,7 @@
           data-pswp-width={largeImg.width}
           data-pswp-height={largeImg.height}
         >
-          <Img src={imageThumb ?? image} class="w-full { imageAspectRatio }] object-cover {imageClass} "/>
+          <Img src={imageThumb ?? image} class="w-full { imageAspectRatio } object-cover {imageClass} "/>
         </a>
       </div>
       {:else}

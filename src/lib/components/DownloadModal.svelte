@@ -19,7 +19,7 @@
 </script>
 
 
-<Modal title="Download {filetype} {file ?? ''}" autoclose={false} bind:open="{toggleModal}">
+<Modal title="Download {filetype} {file ?? ''}" autoclose={false} outsideclose bind:open="{toggleModal}">
   <slot name='message'>
     <Form bind:fields="{fields}" action="?/download" submitText="Download" color="white" btnColor="primaryOutline" noMessage></Form>
   </slot>

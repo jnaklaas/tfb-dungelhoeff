@@ -1,7 +1,8 @@
 <script>
+	import { enhance } from '$app/forms';
 	import Button from "./Button.svelte";
   import { FloatingLabelInput, Textarea, Label, Checkbox } from "flowbite-svelte";
-  export let action, fields = undefined, submitText, color = "primary", btnColor = "whiteOutline", noMessage = false;
+  export let action, fields = undefined, submitText='Contacteer ons', color = "primary", btnColor = "whiteOutline", noMessage = false;
 
   const colorVariants = {
     primary: {
@@ -38,6 +39,6 @@
   {#if !noMessage}
   <Textarea id="message" name="message" placeholder="Uw bericht" rows="4" class="{colorVariants[color].input} bg-transparent rounded-sm border-1 border-darkteal focus:border-gold focus:!ring-0"/>  
   {/if}
-  <Checkbox class="mt-4 {colorVariants[color].label}" required><span>Ik ga akkoord met de <a href="privacyverklaring" target="_blank" class="text-gold font-bold underline">privacyverklaring</a>*.</span></Checkbox>
-  <Button class="mt-8" type="submit" color={btnColor}>{submitText ?? 'Contacteer ons'}</Button>
+  <Checkbox class="mt-4 {colorVariants[color].label}" required><span>Ik ga akkoord met de <a href="privacyverklaring" target="_blank">privacyverklaring</a>*.</span></Checkbox>
+  <Button class="mt-8" type="submit" color={btnColor}>{submitText}</Button>
 </form>

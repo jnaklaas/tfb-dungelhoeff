@@ -10,12 +10,8 @@
   import Icon from '$lib/components/Icon.svelte';
 
   import logoHeylen from "$lib/images/logo-heylen-vastgoed.svg";
-  import ImgExt3 from '$lib/images/Lier_Cam_03_.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
-  import ImgExt2 from '$lib/images/Lier_Cam_02_.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
-  import ImgInt4 from '$lib/images/CAM04.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
-  import ImgKoppel from '$lib/images/koppel.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
+  import logoDungelhoeffW from "$lib/images/dungelhoeff-logo-w.svg";
   import logoCordeel from '$lib/images/logo-cordeel.svg';
-  // import ImgEnv38 from '$lib/images/TRICKS-FOR-BRICKS_LIER_OMGEVINGSBEELDEN_WEB_20230517_038.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
 
 
   /** @type {import('./$types').ActionData} */
@@ -35,9 +31,9 @@
     // Form response feedback + download
     if(form && form.response) {
       showFormResponseNotification = true;
-      // setTimeout(() => {
-      //   showFormResponseNotification = false;
-      // }, 8000);
+      setTimeout(() => {
+        showFormResponseNotification = false;
+      }, 8000);
     }
   });
 </script>
@@ -60,7 +56,10 @@
       <p>
         <img class="float-right h-[1.4em] mt-1" src="{logoHeylen}" alt="Heylen Vastgoed">
         <strong>Heylen Vastgoed</strong><br>03 361 00 03</p>
-      <p><strong>Dungelhoeff woonadviseur</strong><br>Thomas Van der Sypt<br>0473 43 02 32</p>
+      <p>
+        <img class="float-right h-[1.4em] mt-1" src="{logoDungelhoeffW}" alt="Dungelhoeff woonadviseur">
+        <strong>Dungelhoeff woonadviseur</strong><br>Thomas Van der Sypt<br>0473 43 02 32
+      </p>
     </svelte:fragment>
     <svelte:fragment slot=form>
       <h2 class="font-semibold text-[2em] text-white">Contactformulier</h2>

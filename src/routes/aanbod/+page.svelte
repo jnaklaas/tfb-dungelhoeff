@@ -15,7 +15,7 @@
   import ImgExt3 from '$lib/images/Lier_Cam_03_.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
   import ImgExt2 from '$lib/images/Lier_Cam_02_.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
   import ImgInt4 from '$lib/images/CAM04.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
-  import ImgKoppel from '$lib/images/koppel.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
+  import ImgInv1 from '$lib/images/inv1.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
   // import ImgEnv38 from '$lib/images/TRICKS-FOR-BRICKS_LIER_OMGEVINGSBEELDEN_WEB_20230517_038.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
 
   /** @type {import('./$types').PageData} */
@@ -26,6 +26,7 @@
 
   let toggleModal = false;
   let togglePlannenModal = false;
+  let toggleInfoModal = false;
   let toggleRendementModal = false;
   let file, filetype;
 
@@ -117,7 +118,7 @@
   
   <Content image={ImgInt4} imageLeft>
     <svelte:fragment slot="title"><strong>Kwaliteit</strong> gekoppeld aan <strong>duurzaamheid</strong></svelte:fragment>
-    <p>De <strong>afwerking</strong> kan je bij Villa Vigo voor een stuk nog zelf bepalen. Zo is inspraak bijvoorbeeld mogelijk voor je keuken, sanitair en vloer-en wandbekleding. Op die manier wordt je appartement écht naar je wens gerealiseerd. Ook qua <strong>technieken</strong> wordt slim ingezet. Zo is er <strong>vloerverwarming</strong> voorzien – wat altijd super aangenaam aanvoelt – en zal de verwarming gebeuren via <strong>warmtepompen</strong>. Dat is naast duurzaam en energiezuinig ook zeer handig. Met de warmtepomp kan je ruimtes zowel verwarmen als koelen. Een ventilatiesysteem D garandeert je dan weer een optimale luchtkwaliteit, warmterecuperatie en energiebesparing.</p>
+    <p>De <strong>afwerking</strong> kan je bij Villa Vigo voor een stuk nog zelf bepalen. Zo is inspraak bijvoorbeeld mogelijk voor je keuken, sanitair en vloer- en wandbekleding. Op die manier wordt je appartement écht naar je wens gerealiseerd. Ook qua <strong>technieken</strong> wordt slim ingezet. Zo is er <strong>vloerverwarming</strong> voorzien – wat altijd super aangenaam aanvoelt – en zal de verwarming gebeuren via <strong>warmtepompen</strong>. Dat is naast duurzaam en energiezuinig ook zeer handig. Met de warmtepomp kan je ruimtes zowel verwarmen als koelen. Daarnaast voorzien privatieve <strong>PV-panelen</strong> in je eigen elektriciteitsopwekking en het ventilatiesysteem D garandeert je dan weer een optimale luchtkwaliteit, warmterecuperatie en energiebesparing.</p>
   </Content>
 
   <Quote>De afwerking kan je bij Villa Vigo nog deels zelf bepalen.</Quote>
@@ -130,11 +131,12 @@
 
   <Availability id="aanbod" units={data.units} on:downloadFile={displayDownloadModal}>
     <svelte:fragment slot="cta">
-      <Cta on:click={() => togglePlannenModal = true} color="primary">Bezorg me plannen en prijzen</Cta>
+      <Cta on:click={() => togglePlannenModal = true} color="primary">Ik wil de werf bezoeken</Cta><br>
+      <Cta on:click={() => toggleInfoModal = true} color="primary">Ik wil meer info</Cta>
     </svelte:fragment>
   </Availability>
   
-  <Content image="{ImgKoppel}" imageSquare imageClass="object-left">
+  <Content image="{ImgInv1}" imageSquare>
     <svelte:fragment slot="title">Investeren in Villa Vigo? <strong>Slim!</strong></svelte:fragment>
     <p>Vastgoed blijft een <strong>veilige en rendabele investering</strong>. En investeren in Villa Vigo is zeker een slimme zet. Gesitueerd op een betaalbare centrumlocatie is er genoeg potentieel met een grote en financieel gezonde huurderspool. Dit garandeert dan ook mooie verhuurprijzen die vanaf de eerste dag een <strong>interessant huurrendement</strong> kunnen opleveren. 
     </p><p>Centrumlocaties zijn bovendien schaars en leveren bij verkoop een hogere meerwaarde op. Verder mag je bij Villa Vigo ook rekenen op een <strong>snelle oplevertijd</strong> – najaar 2023 al – waardoor je ook snel over huurinkomsten beschikt. En het succes van alle voorgaande projecten op de Dungelhoeff-site toont aan dat de interesse groot is!</p>
@@ -150,37 +152,37 @@
 </article>
 
 <DownloadModal bind:toggleModal={toggleModal} bind:file={file} bind:filetype={filetype}/>
-<ContactModal bind:toggleModal={togglePlannenModal} title="Bezorg me plannen en prijzen"/>
+<ContactModal bind:toggleModal={togglePlannenModal} title="Ik wil de werf bezoeken"/>
+<ContactModal bind:toggleModal={toggleInfoModal} title="Ik wil meer info"/>
 <ContactModal bind:toggleModal={toggleRendementModal} title="Bereken mijn rendement"/>
 
 
 <div class="fixed right-0 bottom-0 m-4 z-30">
-{#if form && form.response }
-<Toast 
-  transition={fly} params="{{x: 200}}"
-  color="{form.response.success ? 'green': 'red'}"
-  divClass="mb-4 w-full max-w-xs p-4 bg-white ring-1 {form.response.success ? 'ring-green-100': 'ring-red-100'} {form.response.success ? 'text-green-500': 'text-red-500'} shadow"
+  {#if form && form.response }
+  <Toast 
+    transition={fly} params="{{x: 200}}"
+    color="{form.response.success ? 'green': 'red'}"
+    divClass="mb-4 w-full max-w-xs p-4 bg-white ring-1 {form.response.success ? 'ring-green-100': 'ring-red-100'} {form.response.success ? 'text-green-500': 'text-red-500'} shadow"
+    defaultIconClass="w-8 h-8 mr-2"
+    bind:open={showFormResponseNotification}>
+    <svelte:fragment slot="icon">
+      <Icon name={form.response.success ? 'circleCheck' : 'triangleExclamation'}/>
+    </svelte:fragment>
+    {form.response.message}
+  </Toast>
+  {/if}
+
+  {#if form && form.response.success }
+  <Toast 
+    transition={fly} params="{{x: 200}}"
+    color="{downloadResponse.success ? 'green': 'red'}"
+    divClass="mb-4 w-full max-w-xs p-4 bg-white ring-1 {downloadResponse.success ? 'ring-green-100': 'ring-red-100'} {downloadResponse.success ? 'text-green-500': 'text-red-500'} shadow"
   defaultIconClass="w-8 h-8 mr-2"
-  bind:open={showFormResponseNotification}>
-  <svelte:fragment slot="icon">
-    <Icon name={form.response.success ? 'circleCheck' : 'triangleExclamation'}/>
-  </svelte:fragment>
-  {form.response.message}
-</Toast>
-{/if}
-
-{#if form && form.response.success }
-<Toast 
-  transition={fly} params="{{x: 200}}"
-  color="{downloadResponse.success ? 'green': 'red'}"
-  divClass="mb-4 w-full max-w-xs p-4 bg-white ring-1 {downloadResponse.success ? 'ring-green-100': 'ring-red-100'} {downloadResponse.success ? 'text-green-500': 'text-red-500'} shadow"
-defaultIconClass="w-8 h-8 mr-2"
-  bind:open={showDownloadResponseNotification}>
-  <svelte:fragment slot="icon">
-    <Icon name={downloadResponse.success ? 'circleCheck' : 'triangleExclamation'}/>
-  </svelte:fragment>
-  {downloadResponse.message}
-</Toast>
-{/if}
-
+    bind:open={showDownloadResponseNotification}>
+    <svelte:fragment slot="icon">
+      <Icon name={downloadResponse.success ? 'circleCheck' : 'triangleExclamation'}/>
+    </svelte:fragment>
+    {downloadResponse.message}
+  </Toast>
+  {/if}
 </div>

@@ -3,7 +3,7 @@
   import { Modal } from "flowbite-svelte";
 	import Button from "./Button.svelte";
 
-  export let title;
+  export let title = 'Bericht';
   export let repeatNthRequest = 8;
 
   let modalCounter = browser ? window.sessionStorage.getItem('modalCounter') ?? 0 : 0;
@@ -11,19 +11,19 @@
 
 </script>
 
-
 <Modal 
-  title="{ title ?? 'Bericht' }" 
+  {title}
   autoclose 
+  outsideclose
   open="{ browser && !(modalCounter % repeatNthRequest) }"
-  backdropClasses="bg-black bg-opacity-50 dark:bg-opacity-80 backdrop-blur"
+  backdropClasses="bg-coolgray bg-opacity-50 dark:bg-opacity-80 backdrop-blur"
   >
-  <slot name='message'>
-    <p>Philippa, klasse wonen heeft een naam.</p>
+  <slot>
+    <p>Aankondiging</p>
   </slot>
-  <svelte:fragment slot='footer'>
+  <!-- <svelte:fragment slot='footer'>
     <slot name="footer">
-      <Button>Sluit bericht</Button>
+      <Button color="primaryOutline">Sluit bericht</Button>
     </slot>
-  </svelte:fragment>
+  </svelte:fragment> -->
 </Modal>

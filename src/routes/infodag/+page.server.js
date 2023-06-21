@@ -51,9 +51,9 @@ const getMailOptions = (formData) => {
 	let mailOptions = {
 		from: process.env.MAIL_FROM ?? 'info@tricksforbricks.be',
 		to: process.env.MAIL_RECIPIENT.split(',') ?? 'jan-klaas@tricksforbricks.be',
-		subject: 'Contactformulier Dungelhoeff',
-		text: 'Contactaanvraag via dungelhoeff-lier.be\n\n',
-		html: '<h2>Contactaanvraag via dungelhoeff-lier.be</h2>'
+		subject: 'Registratie infodag Dungelhoeff',
+		text: 'Registratie infodag via dungelhoeff-lier.be\n\n',
+		html: '<h2>Registratie infodag via dungelhoeff-lier.be</h2>'
 	};
 
 	mailOptions.text += [...formData]

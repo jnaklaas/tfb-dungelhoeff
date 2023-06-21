@@ -21,7 +21,7 @@
 </script>
 
 
-<Modal {title} autoclose={false} bind:open="{toggleModal}">
+<Modal {title} autoclose={false} outsideclose bind:open="{toggleModal}">
   <slot name='message'>
     <Form bind:fields="{composedFields}" action="?/contact" submitText="Verzenden" color="white" btnColor="primaryOutline" noMessage></Form>
   </slot>

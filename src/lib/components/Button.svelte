@@ -1,7 +1,7 @@
 <script>
   import { Button } from 'flowbite-svelte';
 
-  export let href;
+  export let href = null;
   export let color = "white";
 
   const colorVariants = {

@@ -22,6 +22,7 @@
   /* Other typography */
   p { @apply mb-3 font-normal}
   p strong { @apply font-semibold}
+  p > a, a.link { @apply border-b border-primary text-primary hover:bg-primary hover:text-white visited:text-secondary }
 
   /* Layout */
   html, body { @apply h-full }

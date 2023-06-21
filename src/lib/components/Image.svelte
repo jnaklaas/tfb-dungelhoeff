@@ -6,9 +6,9 @@
   export let width;
 </script>
 
-<section class="mb-12 md:mb-12 xl:mb-24">
+<section class="mb-12 md:mb-12 xl:mb-24 {$$props.class ?? ''}">
 {#if width === "full"}
-<Img {src} class="{$$props.class} w-full"/>
+<Img {src} class=" w-full"/>
 {:else if width === "container"}
 <Container>
   <Img {src} class=w-full/>

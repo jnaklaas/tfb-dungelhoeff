@@ -110,7 +110,7 @@
               <button 
                 on:click={downloadFile}
                 data-file="{unit.id}"
-                class="font-semibold text-coolgray hover:underline"
+                class="font-semibold text-coolgray underline hover:text-primary"
                 >
                 Download voorbeeldplannen <Icon name="download" size="1em" class="ml-2"/>
               </button>

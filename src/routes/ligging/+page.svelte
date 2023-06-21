@@ -6,6 +6,7 @@
   import Collage from "$lib/components/Collage.svelte";
   import Cta from "$lib/components/Cta.svelte";
   import Container from "$lib/components/Container.svelte";
+	// import Map from "$lib/components/Map.svelte";
 
   import ImgEnv2 from '$lib/images/TRICKS-FOR-BRICKS_LIER_OMGEVINGSBEELDEN_WEB_20230516_002.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
   import ImgEnv15 from '$lib/images/TRICKS-FOR-BRICKS_LIER_OMGEVINGSBEELDEN_WEB_20230517_015.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
@@ -65,7 +66,7 @@
     <Cta color="primary" href="/contact">Contacteer onze woonadviseur</Cta>
   </Content>
 
-
-
   <!-- <Carousel width="default" images={data.images} /> -->
 </article>
+
+<!-- <Map/> -->

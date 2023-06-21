@@ -1,5 +1,3 @@
-import csv from 'fast-csv';
-import unitsCsv from '$lib/server/units.csv?raw';
 import nodemailer from 'nodemailer';
 import { sql } from '@vercel/postgres';
 
@@ -17,24 +15,6 @@ const transporter = nodemailer.createTransport({
 		rejectUnauthorized: false
 	}
 });
-
-const readCsv = async (file, headers = true, delimiter = ';') => {
-	return new Promise((resolve, reject) => {
-		let units = [];
-		csv
-			.parseString(unitsCsv, { headers: true, delimiter: ',' })
-			.on('error', (error) => console.error(error))
-			.on('data', (row) => units.push(row))
-			.on('end', (rowCount) => resolve(units));
-	});
-};
-
-/** @type {import('./$types').PageServerLoad} */
-export async function load({ params }) {
-	const units = await getUnitsFromCsv();
-	// const units = await getUnitsFromApi();
-	return { units };
-}
 
 /** @type {import('./$types').Actions} */
 export const actions = {
@@ -96,66 +76,6 @@ export const actions = {
 		} finally {
 			return { response };
 		}
-	}
-};
-
-const getUnitsFromCsv = async () => {
-	let units = await readCsv(unitsCsv, true, ',');
-	units = units.filter((unit) => unit.type === 'apartment');
-	units = units.map((unit) => {
-		unit.available = unit.availability !== 'sold';
-		return unit;
-	});
-	return units;
-};
-
-const getUnitsFromApi = async () => {
-	try {
-		const response = await fetch('https://dungelhoeff.tricksforbricks.be/wp/graphql', {
-			method: 'POST',
-			headers: {
-				'Content-Type': 'application/json'
-				// 'Access-Control-Allow-Origin': 'http://127.0.0.1:5173/'
-			},
-			body: JSON.stringify({
-				query: `
-				{
-					apartments (first:999)  {
-						nodes {
-							title
-							acf {
-								rooms
-								status
-								constructionValue
-								surfaceGross
-								surfaceTerrace
-								surfaceGarden
-							}
-						}
-					}
-				}
-			`
-			})
-		});
-		const { data } = await response.json();
-		const units = data.apartments.nodes.map((apartment) => {
-			return {
-				id: apartment.title,
-				floor: apartment.title.split('.')[0],
-				rooms: apartment.acf.rooms,
-				status: apartment.acf.status,
-				price: apartment.acf.constructionValue,
-				surfaceGross: apartment.acf.surfaceGross || 0,
-				terraceGarden: 0 + apartment.acf.surfaceTerrace + apartment.acf.surfaceGarden,
-				available: apartment.acf.status === 'available'
-			};
-		});
-		units.sort((a, b) => a.id - b.id);
-		return units;
-	} catch (error) {
-		console.log(error);
-		const units = await getUnitsFromCsv();
-		return units;
 	}
 };
 
