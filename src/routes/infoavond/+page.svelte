@@ -22,10 +22,10 @@
   
   const fields = [
     {id: 'firstname', label: 'Voornaam*'},
-    // {id: 'name', label: 'Naam*'},
+    {id: 'name', label: 'Naam*'},
     {id: 'email', type: 'email', label: 'E-mail*'},
-    // {id: 'tel', type: 'tel', label: 'Telefoonnummer*'},
-    // {id: 'city', label: 'Woonplaats*'},
+    {id: 'tel', type: 'tel', label: 'Telefoonnummer*'},
+    {id: 'city', label: 'Woonplaats*'},
   ];
   
   let showFormResponseNotification = false;
