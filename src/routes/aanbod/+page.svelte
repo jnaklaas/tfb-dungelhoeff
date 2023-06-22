@@ -11,6 +11,7 @@
   import Cta from "$lib/components/Cta.svelte";
 	import Quote from '$lib/components/Quote.svelte';
 	import ContactModal from '$lib/components/ContactModal.svelte';
+	import NotificationBall from '$lib/components/NotificationBall.svelte';
 
   import ImgExt3 from '$lib/images/Lier_Cam_03_.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
   import ImgExt2 from '$lib/images/Lier_Cam_02_.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
@@ -98,7 +99,14 @@
 
 <article>
   <h1 class="hidden">Aanbod</h1>
-  <Hero image={ImgExt3} imageFullHeight/>
+  <Hero image={ImgExt3} imageFullHeight>
+    <svelte:fragment slot="notificationBall">
+      <NotificationBall>
+        <p class="mb-0">Aankoop 6% BTW mogelijk</p>
+        <p class="mb-0">Oplevering najaar 2023</p>
+      </NotificationBall>
+    </svelte:fragment>
+  </Hero>
 
   <Content>
     <svelte:fragment slot="title">Waar ga jij voor in <strong>Villa Vigo</strong>?</svelte:fragment>

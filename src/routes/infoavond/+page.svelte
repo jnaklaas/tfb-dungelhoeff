@@ -22,10 +22,10 @@
   
   const fields = [
     {id: 'firstname', label: 'Voornaam*'},
-    {id: 'name', label: 'Naam*'},
+    // {id: 'name', label: 'Naam*'},
     {id: 'email', type: 'email', label: 'E-mail*'},
-    {id: 'tel', type: 'tel', label: 'Telefoonnummer*'},
-    {id: 'city', label: 'Woonplaats*'},
+    // {id: 'tel', type: 'tel', label: 'Telefoonnummer*'},
+    // {id: 'city', label: 'Woonplaats*'},
   ];
   
   let showFormResponseNotification = false;
@@ -46,7 +46,7 @@
   <svelte:fragment slot="title"><strong>Infoavond</strong> donderdag 6 juli 2023</svelte:fragment>
   <p>Kom kennis maken met Villa Vigo op <strong>donderdag 6 juli 2023 van 17u tot 20u</strong>. <strong>Bezoek de bijna afgewerkte appartementen, ontdek de plannen en prijzen én kom alles te weten over onze energiezuinige technieken!</strong></p>
 
-  <p>Om iedereen persoonlijk te begeleiden, willen wij u vragen om vooraf in te schrijven. Dit kan door het formulier in te vullen met vermelding van het voorkeurstijdstip van uw bezoek. Wij kijken er alvast naar uit om u op donderdagavond 24 juli 2023 in Villa Vigo te mogen verwelkomen.</p>
+  <p>Om iedereen persoonlijk te begeleiden, willen wij u vragen om vooraf in te schrijven. Dit kan door het formulier in te vullen met vermelding van het voorkeurstijdstip van uw bezoek. Wij kijken er alvast naar uit om u op donderdagavond 6 juli 2023 in Villa Vigo te mogen verwelkomen.</p>
 
   <h3>Projectadres</h3>
   <p>
