@@ -158,7 +158,7 @@
   </Content>
 </article>
 
-<DownloadModal bind:toggleModal={toggleDownloadModal} bind:file={file} bind:filetype={filetype}/>
+<DownloadModal bind:toggleModal={toggleDownloadModal} bind:file={file} bind:filetype={filetype} id="download"/>
 
 
 <div class="fixed right-0 bottom-0 m-4 z-30">

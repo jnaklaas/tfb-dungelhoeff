@@ -159,10 +159,10 @@
 
 </article>
 
-<DownloadModal bind:toggleModal={toggleModal} bind:file={file} bind:filetype={filetype}/>
-<ContactModal bind:toggleModal={togglePlannenModal} title="Ik wil de werf bezoeken"/>
-<ContactModal bind:toggleModal={toggleInfoModal} title="Ik wil meer info"/>
-<ContactModal bind:toggleModal={toggleRendementModal} title="Bereken mijn rendement"/>
+<DownloadModal id="download" bind:toggleModal={toggleModal} bind:file={file} bind:filetype={filetype}/>
+<ContactModal id="bezoek_werf" bind:toggleModal={togglePlannenModal} title="Ik wil de werf bezoeken"/>
+<ContactModal id="meer_info" bind:toggleModal={toggleInfoModal} title="Ik wil meer info"/>
+<ContactModal id="bereken_rendement" bind:toggleModal={toggleRendementModal} title="Bereken mijn rendement"/>
 
 
 <div class="fixed right-0 bottom-0 m-4 z-30">

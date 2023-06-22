@@ -64,7 +64,7 @@
     <svelte:fragment slot=form>
       <h2 class="font-semibold text-[2em] text-white">Contactformulier</h2>
       {#if form && form.response.success} <p class="text-green-600 font-semibold">{form.response.message}</p>{/if}
-      <Form action="/contact" {fields}></Form>
+      <Form id="contact" action="/contact" {fields}></Form>
     </svelte:fragment>
   </Contact>
 

@@ -16,7 +16,7 @@
   }
 </script>
 
-<form {action} method="post">
+<form id="{$$props.id || null}" {action} method="post">
   {#each fields as field}
     {#if field.type === 'hidden'}
     <input type="hidden" name={field.id} value="{field.value}"/>

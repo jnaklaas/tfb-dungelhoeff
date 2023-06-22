@@ -23,7 +23,7 @@
 
 <Modal {title} autoclose={false} outsideclose bind:open="{toggleModal}">
   <slot name='message'>
-    <Form bind:fields="{composedFields}" action="?/contact" submitText="Verzenden" color="white" btnColor="primaryOutline" noMessage></Form>
+    <Form id="{$$props.id || null}" bind:fields="{composedFields}" action="?/contact" submitText="Verzenden" color="white" btnColor="primaryOutline" noMessage></Form>
   </slot>
   <svelte:fragment slot='footer'></svelte:fragment>
 </Modal>
