@@ -87,13 +87,13 @@ const getMail2Options = (formData) => {
 	};
 
 	mailOptions.text += `Beste ${formData.firstname},\n\n
-		Wij hebben uw inschrijving voor de infoavond van Villa Vigo goed ontvangen. Wij verwachten u op 6 juli 2023 van 17u tot 20u\n\n
+		Wij hebben uw inschrijving voor de infoavond van Villa Vigo goed ontvangen. Wij verwachten u op 6 juli 2023 van 17u tot 20u.\n\n
 		Projectadres:\nKazernedreef\n2500 Lier\n\n
 		Met vriendelijke groeten\n\n
 		Het Dungelhoeff salesteam`;
 
 	mailOptions.html += `<p>Beste ${formData.firstname},<br><br>
-	Wij hebben uw inschrijving voor de infoavond van Villa Vigo goed ontvangen. Wij verwachten u op 6 juli 2023 van 17u tot 20u<br><br>
+	Wij hebben uw inschrijving voor de infoavond van Villa Vigo goed ontvangen. Wij verwachten u op 6 juli 2023 van 17u tot 20u.<br><br>
 	Projectadres:<br>Kazernedreef<br>2500 Lier<br><br>
 	Met vriendelijke groeten<br><br>
 	Het Dungelhoeff salesteam</p>`;
