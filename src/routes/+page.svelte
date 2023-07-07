@@ -89,7 +89,7 @@
   });
 </script>
 
-{#if !form}
+<!-- {#if !form}
 <NotificationModal repeatNthRequest=2 title="Infoavond donderdag 6 juli 2023">
   <p>Kom kennis maken met Villa Vigo op <strong>donderdag 6 juli 2023 van 17u tot 20u</strong>. <strong>Bezoek de bijna afgewerkte appartementen, ontdek de plannen en prijzen én kom alles te weten over onze energiezuinige technieken!</strong></p>
 
@@ -104,7 +104,7 @@
   <Img src={HeroImg} class="w-full object-cover"/>
 </p>
 </NotificationModal>
-{/if}
+{/if} -->
 
 <article>
   <Hero image={HeroImg} imageFullHeight imageClass="object-[center_90%]">
