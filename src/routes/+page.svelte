@@ -126,7 +126,7 @@
       Met een appartement in Villa Vigo heb je <strong>alles om voluit van het leven te genieten</strong>. 
     </p>
     <Cta href="/aanbod" color="primary">Ontdek het aanbod</Cta><br>
-    <Cta href="/infoavond" color="primary">Inschrijven infoavond</Cta>
+    <!-- <Cta href="/infoavond" color="primary">Inschrijven infoavond</Cta> -->
   </Content>
 
   
