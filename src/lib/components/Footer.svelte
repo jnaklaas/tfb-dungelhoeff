@@ -1,9 +1,6 @@
 <script>
   import logoTFB from '$lib/images/another-tfb-brand.svg';
-	import { getContext } from 'svelte';
 	import Container from './Container.svelte';
-
-  const headerMx = getContext('headerMx') || 'sm:mx-6 md:mx-8 lg:mx-10 xl:mx-12 2xl:mx-24';
 </script>
 
 <footer class="color-scheme-dark mt-auto text-sm lg:text-xs py-base">

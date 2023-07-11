@@ -1,7 +1,5 @@
 <script>
   import Img from '@zerodevx/svelte-img';
-  import pkg from '@vime/core';
-  const { VmAudio, VmFile, VmCaptionControl, VmControl, VmIcon, VmTooltip, VmCaptions, VmClickToPlay, VmControlGroup, VmControlSpacer, VmControls, VmCurrentTime, VmTime, VmDailymotion, VmEmbed, VmDash, VmVideo, VmDblClickFullscreen, VmDefaultControls, VmEndTime, VmFullscreenControl, VmLiveIndicator, VmMuteControl, VmPipControl, VmPlaybackControl, VmScrim, VmScrubberControl, VmSlider, VmSettingsControl, VmTimeProgress, VmVolumeControl, VmDefaultSettings, VmMenu, VmMenuItem, VmMenuRadio, VmMenuRadioGroup, VmSettings, VmSubmenu, VmDefaultUi, VmLoadingScreen, VmPoster, VmSpinner, VmUi, VmHls, VmIconLibrary, VmPlayer, VmSkeleton, VmVimeo, VmYoutube } = pkg;
   import { Player, Vimeo, DefaultControls, DefaultUi } from '@vime/svelte';
   // import * as pkg from '@vime/core';
   // const { defineCustomElements, VmPlayer, VmVimeo, VmDefaultUi, VmDefaultControls } = pkg;

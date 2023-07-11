@@ -1,7 +1,7 @@
 <script>
   import Button from '$lib/components/Button.svelte';
-  export let href;
-  export let color;
+  export let href = null;
+  export let color = null;
 </script>
 
 {#if $$slots.default}

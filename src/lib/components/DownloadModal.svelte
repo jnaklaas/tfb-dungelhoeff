@@ -1,7 +1,5 @@
 <script>
-  import { browser } from "$app/environment";
   import { Modal } from "flowbite-svelte";
-	import Button from "./Button.svelte";
   import Form from "./Form.svelte";
 
   export let toggleModal = false;
