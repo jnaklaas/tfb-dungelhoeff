@@ -18,7 +18,7 @@
     { href: '/', title: 'Home'},
     { href: '/ligging', title: 'Ligging'},
     { href: '/aanbod', title: 'Aanbod'},
-    // { href: '/galerij', title: 'Galerij'},
+    { href: '/galerij', title: 'Galerij'},
     // { href: '/infoavond', title: 'Infoavond'},
     { href: '/contact', title: 'Contact'}
   ];
