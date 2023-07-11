@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
   import Img from '@zerodevx/svelte-img';
   import { Player, Vimeo, DefaultControls, DefaultUi } from '@vime/svelte';
   // import * as pkg from '@vime/core';
