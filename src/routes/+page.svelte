@@ -13,7 +13,7 @@
 	import DownloadModal from "$lib/components/DownloadModal.svelte";
 
   import HeroImg from '$lib/images/hero1.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
-  import ImgExt4 from '$lib/images/ext4.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
+  import ImgExt4 from '$lib/images/ext4-cropped.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
   import ImgInt4 from '$lib/images/int4.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
   import ImgEnv11 from '$lib/images/env11.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
   import ImgAtm1 from '$lib/images/atm1.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';

@@ -31,7 +31,7 @@
     ];
 </script>
 
-<section class="{$$props.class ?? ''} content mb-12 md:mb-12 xl:mb-24" id="{$$props.id || null}">
+<section class="content mb-12 md:mb-12 xl:mb-24 {$$props.class ?? ''} " id="{$$props.id || null}">
   <Container grid>
 
     {#if image}
