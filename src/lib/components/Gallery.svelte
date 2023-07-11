@@ -65,7 +65,9 @@
 </section>
 
 
+{#if vimeo}
 <link
   rel="stylesheet"
   href="https://cdn.jsdelivr.net/npm/@vime/core@^5/themes/default.css"
 />
+{/if}

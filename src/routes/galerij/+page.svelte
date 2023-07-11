@@ -42,12 +42,6 @@
 </script>
 
 <Gallery vimeo="837944024" title="Villa Vigo videotour" />
-<!-- <Gallery images="{galerijVillaVigo}" title="Villa Vigo" />
+<Gallery images="{galerijVillaVigo}" title="Villa Vigo" />
 <Gallery images="{galerijInterieur}" title="Villa Vigo interieur" />
-<Gallery images="{galerijOmgeving}" title="Omgeving" /> -->
-
-<!-- 
-<link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/@vime/core@^5/themes/default.css"
-/> -->
+<Gallery images="{galerijOmgeving}" title="Omgeving" />
