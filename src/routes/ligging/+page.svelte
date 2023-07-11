@@ -8,10 +8,10 @@
   import Container from "$lib/components/Container.svelte";
 	// import Map from "$lib/components/Map.svelte";
 
-  import ImgEnv2 from '$lib/images/TRICKS-FOR-BRICKS_LIER_OMGEVINGSBEELDEN_WEB_20230516_002.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
-  import ImgEnv15 from '$lib/images/TRICKS-FOR-BRICKS_LIER_OMGEVINGSBEELDEN_WEB_20230517_015.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
-  import ImgEnv28 from '$lib/images/TRICKS-FOR-BRICKS_LIER_OMGEVINGSBEELDEN_WEB_20230517_028.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
-  import ImgEnv46 from '$lib/images/TRICKS-FOR-BRICKS_LIER_OMGEVINGSBEELDEN_WEB_20230517_046.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
+  import ImgEnv2 from '$lib/images/env2.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
+  import ImgEnv15 from '$lib/images/env15.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
+  import ImgEnv28 from '$lib/images/env28.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
+  import ImgEnv46 from '$lib/images/env46.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
   import ImgPlan from '$lib/images/plan.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
   import ImgEnv5 from '$lib/images/env5.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
   import ImgEnv18 from '$lib/images/env18.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';

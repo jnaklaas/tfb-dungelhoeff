@@ -13,9 +13,9 @@
 	import ContactModal from '$lib/components/ContactModal.svelte';
 	import NotificationBall from '$lib/components/NotificationBall.svelte';
 
-  import ImgExt3 from '$lib/images/Lier_Cam_03_.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
-  import ImgExt2 from '$lib/images/Lier_Cam_02_.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
-  import ImgInt4 from '$lib/images/CAM04.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
+  import ImgExt3 from '$lib/images/ext3.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
+  import ImgExt2 from '$lib/images/ext2.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
+  import ImgInt4 from '$lib/images/int4.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
   import ImgInv1 from '$lib/images/inv1.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
   // import ImgEnv38 from '$lib/images/TRICKS-FOR-BRICKS_LIER_OMGEVINGSBEELDEN_WEB_20230517_038.jpg?w=480;1024;1920&format=webp;avif;jpg&meta';
 
