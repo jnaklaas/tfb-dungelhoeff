@@ -1,5 +1,5 @@
-import ImgEnv46 from '$lib/images/TRICKS-FOR-BRICKS_LIER_OMGEVINGSBEELDEN_WEB_20230517_046.jpg?w=1600&format=webp&meta';
-import ImgEnv27 from '$lib/images/TRICKS-FOR-BRICKS_LIER_OMGEVINGSBEELDEN_WEB_20230517_027.jpg?w=1600&format=webp&meta';
+import ImgEnv46 from '$lib/images/env46.jpg?w=1600&format=webp&meta';
+import ImgEnv27 from '$lib/images/env27.jpg?w=1600&format=webp&meta';
 
 const images = [
 	{
