@@ -13,7 +13,6 @@
   import ImgExt2 from '$lib/images/ext2.jpg?w=240;1920&format=webp;avif;jpg&meta';
   import ImgExt3 from '$lib/images/ext3.jpg?w=240;1920&format=webp;avif;jpg&meta';
   import ImgExt4 from '$lib/images/ext4.jpg?w=240;1920&format=webp;avif;jpg&meta';
-  import ImgExt5 from '$lib/images/ext5.jpg?w=240;1920&format=webp;avif;jpg&meta';
   
   // environment gallery
   import ImgEnv1 from '$lib/images/env1.jpg?w=240;1920&format=webp;avif;jpg&meta';
@@ -36,16 +35,16 @@
   import ImgEnv46 from '$lib/images/env46.jpg?w=240;1920&format=webp;avif;jpg&meta';
 	
 
-  const galerijVillaVigo = [ ImgExt1, ImgExt2, ImgExt3, ImgExt4, ImgExt5 ];
+  const galerijVillaVigo = [ ImgExt1, ImgExt2, ImgExt3, ImgExt4];
   const galerijOmgeving = [ ImgEnv1, ImgEnv3, ImgEnv4, ImgEnv5, ImgEnv9, ImgEnv13, ImgEnv14, ImgEnv19, ImgEnv23, ImgEnv24, ImgEnv34, ImgEnv35, ImgEnv36, ImgEnv38, ImgEnv39, ImgEnv41, ImgEnv43, ImgEnv46 ];
   const galerijInterieur = [ ImgInt2, ImgInt3, ImgInt4, ImgInt5, ImgInt6 ];
 
 </script>
 
 <Gallery vimeo="837944024" title="Villa Vigo videotour" />
-<Gallery images="{galerijVillaVigo}" title="Villa Vigo" />
+<!-- <Gallery images="{galerijVillaVigo}" title="Villa Vigo" />
 <Gallery images="{galerijInterieur}" title="Villa Vigo interieur" />
-<Gallery images="{galerijOmgeving}" title="Omgeving" />
+<Gallery images="{galerijOmgeving}" title="Omgeving" /> -->
 
 <!-- 
 <link

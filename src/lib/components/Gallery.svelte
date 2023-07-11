@@ -1,6 +1,11 @@
 <script>
   import Img from '@zerodevx/svelte-img';
+  import pkg from '@vime/core';
+  const { VmAudio, VmFile, VmCaptionControl, VmControl, VmIcon, VmTooltip, VmCaptions, VmClickToPlay, VmControlGroup, VmControlSpacer, VmControls, VmCurrentTime, VmTime, VmDailymotion, VmEmbed, VmDash, VmVideo, VmDblClickFullscreen, VmDefaultControls, VmEndTime, VmFullscreenControl, VmLiveIndicator, VmMuteControl, VmPipControl, VmPlaybackControl, VmScrim, VmScrubberControl, VmSlider, VmSettingsControl, VmTimeProgress, VmVolumeControl, VmDefaultSettings, VmMenu, VmMenuItem, VmMenuRadio, VmMenuRadioGroup, VmSettings, VmSubmenu, VmDefaultUi, VmLoadingScreen, VmPoster, VmSpinner, VmUi, VmHls, VmIconLibrary, VmPlayer, VmSkeleton, VmVimeo, VmYoutube } = pkg;
   import { Player, Vimeo, DefaultControls, DefaultUi } from '@vime/svelte';
+  // import * as pkg from '@vime/core';
+  // const { defineCustomElements, VmPlayer, VmVimeo, VmDefaultUi, VmDefaultControls } = pkg;
+  // defineCustomElements();
 
   export let images = [];
   export let title = null;
@@ -15,6 +20,16 @@
   {/if}
   {#if vimeo}
   <div class="container grid lg:grid-cols-2 gap-6 md:gap-8 xl:gap-12">
+    <!-- <vm-player style="--vm-player-border-radius: 0">
+      <vm-vimeo 
+        byline=false
+        videoId={vimeo} 
+        cookies=false
+      />
+      <vm-default-ui noControls>
+        <vm-default-controls hideOnMouseLeave activeDuration="{2000}" />
+      </vm-default-ui>
+    </vm-player> -->
     <Player style="--vm-player-border-radius: 0">
       <Vimeo 
         byline=false
